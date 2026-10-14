@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-labelledby="title desc">
+  <title id="title">Kariyer Günleri</title>
+  <desc id="desc">12 EKİM 2026, 14:00, A Blok Konferans Salonu</desc>
+  <rect width="720" height="480" fill="#173c21"/>
+  <rect x="40" y="42" width="64" height="6" fill="#a9e5b1"/>
+  <g fill="#ffffff" font-family="Georgia, serif">
+    <text x="40" y="93" font-size="21" letter-spacing="3">KAMPÜS ETKİNLİKLERİ</text>
+    <text x="40" y="205" font-size="39">Kariyer Günleri</text>
+    <text x="40" y="254" font-size="25" fill="#a9e5b1">Seminer · 2026</text>
+    <text x="40" y="376" font-size="28">12 EKİM 2026 · 14:00</text>
+    <text x="40" y="420" font-size="23">A Blok Konferans Salonu</text>
+  </g>
+</svg>

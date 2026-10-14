@@ -1,0 +1,192 @@
+/* Abdelrahman Zidan — 2321032807 */
+:root {
+  --no: 2321032807;
+  --ton: mod(var(--no), 360);
+  --renk-ana: hsl(var(--ton) 65% 38%);
+  --renk-zemin: hsl(var(--ton) 30% 97%);
+  --font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  --renk-metin: hsl(var(--ton) 24% 16%);
+  --renk-ikincil: hsl(var(--ton) 13% 34%);
+  --renk-yuzey: hsl(var(--ton) 30% 100%);
+  --renk-cizgi: hsl(var(--ton) 18% 82%);
+  --renk-koyu: hsl(var(--ton) 65% 27%);
+  --renk-acik: hsl(var(--ton) 40% 92%);
+  --renk-hata: hsl(0 70% 38%);
+  --renk-hata-zemin: hsl(0 70% 98%);
+  --bosluk-xs: 0.25rem;
+  --bosluk-s: 0.5rem;
+  --bosluk-m: 1rem;
+  --bosluk-l: 1.5rem;
+  --bosluk-xl: 2rem;
+  --kose: 8px;
+  --icerik-genisligi: 68rem;
+}
+
+/* Older browsers still receive the correct computed hue. */
+@supports not (width: mod(10px, 3px)) {
+  :root { --ton: 127; }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--renk-metin);
+  background: var(--renk-zemin);
+  overflow-wrap: anywhere;
+}
+.container {
+  width: min(100% - var(--bosluk-xl), var(--icerik-genisligi));
+  margin-inline: auto;
+}
+h1, h2, h3 { line-height: 1.25; margin: 0 0 var(--bosluk-m); }
+h1 { font-size: clamp(1.4rem, 3vw, 2rem); }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.2rem; }
+p { margin: 0 0 var(--bosluk-m); }
+a { color: var(--renk-koyu); text-underline-offset: var(--bosluk-xs); }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--renk-koyu);
+  outline-offset: 3px;
+}
+.site-header {
+  padding-block: var(--bosluk-l) var(--bosluk-s);
+  background: var(--renk-koyu);
+  border-bottom: 5px solid var(--renk-ana);
+  color: var(--renk-yuzey);
+}
+.site-header h1 { margin-bottom: var(--bosluk-s); }
+nav { display: flex; flex-wrap: wrap; gap: var(--bosluk-xs) var(--bosluk-m); }
+nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: bold;
+  color: var(--renk-yuzey);
+  text-decoration: none;
+  text-shadow: 0 1px 1px var(--renk-koyu);
+}
+nav a:hover, nav a[aria-current="page"] { text-decoration: underline; }
+nav a:focus-visible { outline-color: var(--renk-yuzey); }
+main { padding-block: var(--bosluk-xl); min-height: 60vh; }
+.intro { max-width: 48rem; margin-bottom: var(--bosluk-l); }
+.event-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--bosluk-m); }
+.event-card {
+  min-width: 0;
+  padding: var(--bosluk-l);
+  background: var(--renk-yuzey);
+  border: 1px solid var(--renk-cizgi);
+  border-radius: var(--kose);
+}
+.event-card h3 { margin-bottom: var(--bosluk-s); }
+.event-card p { margin-bottom: var(--bosluk-xs); }
+.detail-link, .all-events a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: bold;
+}
+.all-events { margin-block: var(--bosluk-m) 0; }
+.site-footer {
+  color: var(--renk-ikincil);
+  border-top: 1px solid var(--renk-cizgi);
+  padding-block: var(--bosluk-m);
+  font-size: 0.9375rem;
+}
+.detail-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--bosluk-l); }
+.detail-grid > * { min-width: 0; }
+figure { margin: 0; }
+img { display: block; width: 100%; height: auto; border-radius: var(--kose); }
+figcaption { margin-top: var(--bosluk-s); color: var(--renk-ikincil); font-style: italic; }
+dl { margin: 0 0 var(--bosluk-m); padding: var(--bosluk-m); border: 1px solid var(--renk-cizgi); border-radius: var(--kose); background: var(--renk-yuzey); }
+dt { font-weight: bold; }
+dd { margin: 0 0 var(--bosluk-s); }
+.event-detail { margin-bottom: var(--bosluk-xl); scroll-margin-top: var(--bosluk-m); }
+.event-form { max-width: 42rem; }
+.form-hint { color: var(--renk-ikincil); }
+.form-field { margin-bottom: var(--bosluk-m); }
+label { display: block; font-weight: bold; margin-bottom: var(--bosluk-xs); }
+input, select, textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 48px;
+  padding: var(--bosluk-s) var(--bosluk-m);
+  font: inherit;
+  color: var(--renk-metin);
+  background: var(--renk-yuzey);
+  border: 1px solid var(--renk-cizgi);
+  border-radius: var(--kose);
+}
+textarea { resize: vertical; }
+.field-error { color: var(--renk-hata); font-size: 0.9375rem; margin-top: var(--bosluk-xs); }
+button {
+  width: 100%;
+  min-height: 48px;
+  padding: var(--bosluk-s) var(--bosluk-xl);
+  border: 0;
+  border-radius: var(--kose);
+  background: var(--renk-koyu);
+  color: var(--renk-yuzey);
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+button:hover { background: var(--renk-metin); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (min-width: 42rem) {
+  .event-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .detail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--bosluk-s) var(--bosluk-m); }
+  dd { margin: 0; }
+  button { width: auto; min-width: 9rem; }
+}
+@media (min-width: 60rem) {
+  .event-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .upcoming-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Sprint 3: filtre, JavaScript doğrulaması ve sonuç mesajları. */
+[hidden] { display: none !important; }
+.event-card { display: flex; flex-direction: column; border-top: 3px solid var(--renk-ana); }
+.event-card .detail-link { margin-top: auto; }
+.category-label { color: var(--renk-koyu); font-weight: bold; }
+.card-description { padding-block: var(--bosluk-s); }
+.filtre {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--bosluk-m);
+  padding: var(--bosluk-m);
+  margin-bottom: var(--bosluk-m);
+  background: var(--renk-yuzey);
+  border: 1px solid var(--renk-cizgi);
+  border-radius: var(--kose);
+}
+.filtre > div { min-width: 0; }
+#sonuc { color: var(--renk-koyu); font-weight: bold; }
+.empty-state { grid-column: 1 / -1; padding: var(--bosluk-l); border: 1px solid var(--renk-cizgi); border-radius: var(--kose); background: var(--renk-yuzey); }
+.notice { margin-block: var(--bosluk-m); padding: var(--bosluk-m); border: 1px solid; border-radius: var(--kose); }
+.notice p:last-child { margin-bottom: 0; }
+.notice-error { color: var(--renk-hata); background: var(--renk-hata-zemin); border-color: var(--renk-hata); }
+.notice-success { color: var(--renk-koyu); background: var(--renk-acik); border-color: var(--renk-ana); }
+#form-mesaj { max-width: 42rem; }
+pre { margin: 0; font-size: 0.9375rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+[aria-invalid="true"] { border: 2px solid var(--renk-hata); background: var(--renk-hata-zemin); }
+.field-error { display: block; }
+.field-error:empty { display: none; }
+.detail-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--bosluk-m); }
+.button-link { display: inline-flex; justify-content: center; align-items: center; min-height: 48px; padding: var(--bosluk-s) var(--bosluk-m); color: var(--renk-yuzey); background: var(--renk-koyu); border-radius: var(--kose); font-weight: bold; text-decoration: none; }
+.button-link:hover { background: var(--renk-metin); }
+@media (min-width: 42rem) { .filtre { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); } }
+
+/* Sprint 4: state ile seçilen menü ve isteğe bağlı afiş. */
+nav a { padding-inline: var(--bosluk-m); border-radius: var(--kose); }
+nav a[aria-current="page"] { color: var(--renk-koyu); background: var(--renk-yuzey); text-decoration: none; text-shadow: none; }
+.detail-grid.without-image { grid-template-columns: minmax(0, 1fr); }
+/* 2321032807 % 360 = 127. Sabit sonuç büyük sayılarda CSS kayan nokta yuvarlamasını önler. */
+:root { --ton: 127; }
