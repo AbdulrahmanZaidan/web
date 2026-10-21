@@ -190,3 +190,20 @@ nav a[aria-current="page"] { color: var(--renk-koyu); background: var(--renk-yuz
 .detail-grid.without-image { grid-template-columns: minmax(0, 1fr); }
 /* 2321032807 % 360 = 127. Sabit sonuç büyük sayılarda CSS kayan nokta yuvarlamasını önler. */
 :root { --ton: 127; }
+
+
+
+:root {
+  --renk-zemin: #F5EEE6;   
+  --renk-yuzey: #FFFFFF;   
+  --renk-bej: #D4BC98;     
+  --renk-ana: #B89B72;     
+  --renk-koyu: #6B4E2E;    
+  --renk-metin: #3A2E22;
+  --renk-ikincil: #6A5B4B;
+  --renk-cizgi: #E2D6C6;
+  --renk-acik: #EFE4D3;
+}
+.site-header { background: var(--renk-bej); color: var(--renk-metin); }
+nav a { color: var(--renk-metin); text-shadow: none; }
+nav a:focus-visible { outline-color: var(--renk-koyu); }
