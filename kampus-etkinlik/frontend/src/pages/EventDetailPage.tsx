@@ -8,6 +8,6 @@ function EventDetailPage() {
   const { events } = useEvents()
   const event = findEventById(events, id ?? '')
   if (!event) return <NotFoundPage />
-  return <><title>{event.title} — Kampüs Etkinlikleri</title><h2>{event.title}</h2><EventDetail event={event} /></>
+  return <><title>{`${event.title} — Kampüs Etkinlikleri`}</title><h2>{event.title}</h2><EventDetail event={event} /></>
 }
 export default EventDetailPage
