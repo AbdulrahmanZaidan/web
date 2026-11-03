@@ -1,168 +1,155 @@
-Canlı site: https://sprint2-ashy.vercel.app/
+Canlı proje adresi: https://sprint2-ashy.vercel.app/
 
-# Kampüs Etkinlikleri — Sprint 5
+# Kampüs Etkinlikleri — Sprint 6 ve Vize
 
-**Öğrenci:** Abdelrahman Zidan
+**Öğrenci:** Abdelrahman Zidan · **Numara:** 2321032807
 
-**Öğrenci numarası:** 2321032807
+**GitHub:** https://github.com/AbdulrahmanZaidan/web
 
-**Konu:** React Bileşenleri — props, interface, callback ve lifting state
+React, TypeScript ve React Router ile kampüs etkinlikleri uygulaması. Sprint 5 üzerine
+Router, Context, yönetim ve kontrollü form doğrulaması eklendi. Mevcut bej tasarım korundu.
 
-Sprint 4'te tek dosyada bulunan arayüz, bu sprintte yeniden kullanılabilir
-bileşenlere ayrılmıştır. Aynı `frontend/` klasöründe devam edilir; görünüm,
-etkinlik verileri ve sayfa akışı korunur.
+> Yayın notu: Yukarıdaki adres mevcut proje adresidir. Bu sürümün canlı yayını ve
+> öğretmenin istediği `isimsoyisim-frontend.vercel.app` alan adı ayrıca doğrulanmalıdır.
+> Planlanan teslim alan adı: `abdelrahmanzidan-frontend.vercel.app` (henüz atanmış değildir).
 
-## Sprintler
+## Kurulum ve çalıştırma
 
-| Klasör / etiket | İçerik |
-|---|---|
-| `sprint1/` — `sprint-01` | Semantik HTML, tablo ve formlar |
-| `sprint2/` — `sprint-02` | Öğrenci numarasına göre CSS ve responsive tasarım |
-| `sprint3/` — `sprint-03` | JavaScript modülleri, DOM ve form doğrulaması |
-| `frontend/` — `sprint-04` | Vite, TypeScript ve React başlangıcı |
-| `frontend/` — `sprint-05` | React bileşenlerine ayırma; güncel sürüm |
-
-Ayrı `sprint5/` klasörü oluşturulmaz. Sprint 4, `sprint-04` Git etiketinde bulunur.
-Sprint 1–3 dosyaları değiştirilmemiştir.
-
-## Çalıştırma
-
-Node.js 22.12+ veya 24 LTS ve npm 10+ ile repository kökünden:
+Node.js **24** ve npm kullanın. GitHub repository kökünden:
 
 ```bash
-cd frontend
+cd kampus-etkinlik/frontend
 npm install
 npm run dev
 ```
 
-Terminaldeki adresi açın; genellikle `http://localhost:5173` olur.
-Live Server kullanmayın; HTML dosyasını doğrudan açmayın.
-
-Üretim sürümünü kontrol etmek için aynı klasörde:
+Terminalde yazan yerel adresi açın (genellikle http://localhost:5173).
+ZIP içindeyseniz önce `web-main` klasörünü açın. `frontend` klasörünün içindeyseniz
+`cd` komutunu tekrar çalıştırmayın. HTML dosyasını çift tıklamayın; Vite sunucusunu kullanın.
 
 ```bash
+npm test
+npm run lint
 npm run build
 npm run preview
 ```
 
-Önizleme genellikle `http://localhost:4173` adresindedir. `Ctrl+C` sunucuyu durdurur.
-Ek statik kontrol: `npm run lint`.
+`npm test`, Node test runner ile doğrulama sınırlarını ve Türkçe filtrelemeyi kontrol eder.
+`npm run build`, strict TypeScript kontrolünü ve üretim derlemesini çalıştırır.
+Önizleme adresi genellikle http://localhost:4173; durdurmak için Ctrl+C.
 
-## Bileşenler ve props
+## Route listesi — 10 route
 
-Tüm bileşen dosyaları `frontend/src/components/` altındadır. Props alan bileşenler
-kendi `interface` tanımını kullanır; her bileşenin `export default` satırı vardır.
-
-| Dosya | Props | Sorumluluk |
+| Adres | Sayfa | Görevi |
 |---|---|---|
-| `layout/Header.tsx` | `title`, isteğe bağlı `text` | Sayfa başlığını ve varsa alt metni gösterir. |
-| `layout/Navigation.tsx` | `current`, `onNavigate` | Menüyü çizer, seçimi callback ile App'e bildirir. |
-| `layout/Footer.tsx` | Yok | Öğrenci adı, numarası ve yılı gösterir. |
-| `events/EventCard.tsx` | `event`, `onShowDetail` | Tek kartı çizer ve detay isteğinde etkinlik ID'sini bildirir. |
-| `events/EventList.tsx` | `events`, `onShowDetail`, isteğe bağlı `emptyText`, `className` | Kartları `key={event.id}` ile üretir veya boş sonuç mesajını gösterir. |
-| `events/EventFilter.tsx` | `searchText`, `category`, `categories`, `onSearchChange`, `onCategoryChange` | Kontrollü arama ve kategori alanlarını gösterir. |
-| `events/EventDetail.tsx` | `event`, `onBack`, `onEdit` | Etkinliği gösterir; dönüş ve güncelleme olaylarını bildirir. |
-| `forms/EventForm.tsx` | `onSubmit` | Ortak formu gösterir; submit'i engelleyip callback'i çağırır. |
+| `/` | HomePage | Tarihe göre sıralanmış ilk iki etkinlik |
+| `/events` | EventsPage | Arama ve kategori filtresi |
+| `/events/:id` | EventDetailPage | ID ile etkinlik detayı |
+| `/admin` | AdminPage | Liste, düzenleme, onaylı silme |
+| `/admin/new` | AddEventPage | Yeni etkinlik |
+| `/admin/:id/edit` | EditEventPage | Dolu form ile güncelleme |
+| `/login` | LoginPage | Giriş formu demosu |
+| `/register` | RegisterPage | Kayıt formu demosu |
+| `/forgot-password` | ForgotPasswordPage | Şifre yenileme demosu |
+| `*` | NotFoundPage | Bilinmeyen sayfa |
 
-Klasör şemasında istenen **8 ayrı bileşen dosyası** vardır; ana `App` ile birlikte
-9 React bileşeni bulunur. Ek, kullanılmayan bir bileşen oluşturulmamıştır.
-`Header` ve `Navigation`, App'teki mevcut ortak header/container içinde kullanılır;
-böylece Sprint 4'ün HTML yerleşimi ve görünümü korunur.
+Olmayan etkinlik ID'si de NotFoundPage gösterir. Menü NavLink; sayfa bağlantıları Link;
+kayıttan sonra yönlendirme useNavigate kullanır. Geri/ileri düğmeleri çalışır.
 
-## State ve veri akışı
+## Klasör yapısı
 
-- `page`, `selectedId`, `searchText` ve `category` state'leri **App'te** kalır.
-- Alt bileşenler veriyi props ile alır; kendi sayfa/arama state'lerini oluşturmaz.
-- Tıklama ve giriş olayları callback fonksiyonlarıyla App'e bildirilir.
-- Örnek: `EventCard` → `onShowDetail(id)` → App `go('detail', id)` → `EventDetail`.
-- Arama: `EventFilter` → `onSearchChange(text)` → App state → filtrelenmiş `EventList`.
-- Ana sayfa ve liste aynı `EventList`/`EventCard` bileşenlerini kullanır.
-- `filtered` ve `upcoming` hesaplanan değerlerdir; ayrıca state'te tutulmaz.
-- Detayda etkinliğin adı hem üst başlıkta hem tarayıcı sekmesinde görünür.
-- `useEffect`, `document.title` değerini `Kampüs Etkinlikleri — ${title}` olarak günceller.
-- Router kullanılmaz; geçişlerde URL değişmez ve sayfa yenilenmez.
+Tüm güncel uygulama `kampus-etkinlik/frontend` altındadır.
 
-`App.tsx` 89 satırdır; kart, detay, filtre, form ve footer JSX'i kendi dosyalarına
-alınmıştır. App'te `<article>`, `<footer>`, `renderCard` veya form alanı yoktur.
-
-## Ortak tipler ve yardımcılar
-
-| Dosya | Görevi |
+| Klasör/dosya | İçerik |
 |---|---|
-| `src/types/page.ts` | Beş görünümü tanımlayan ortak `PageName` tipini dışa aktarır. |
-| `src/types/campus-event.ts` | `CampusEvent` arayüzünü ve dört değerli `Category` tipini tanımlar. |
-| `src/utils/format-date.ts` | Kart ve detayda kullanılan ortak Türkçe tarih biçimleyicisidir. |
-| `src/utils/filter-events.ts` | Saf arama, kategori filtreleme ve ID bulma fonksiyonlarını içerir. |
-| `src/data/events.ts` | Altı örnek etkinliği `CampusEvent[]` olarak saklar. |
+| `src/components/layout/` | Header, Navigation, Footer |
+| `src/components/events/` | EventCard, EventList, EventFilter, EventDetail |
+| `src/components/forms/EventForm.tsx` | Ekle/güncelle için ortak kontrollü form |
+| `src/pages/` | Yukarıdaki 10 sayfa |
+| `src/context/EventsContext.tsx` | EventsProvider ve useEvents |
+| `src/types/campus-event.ts` | CampusEvent, Category, EventFormData, EventFormErrors |
+| `src/data/events.ts` | Altı başlangıç etkinliği |
+| `src/utils/` | filter-events, format-date, validate-event |
+| `src/App.tsx` | Header, Navigation, Routes ve Footer kabuğu; sayfa state'i yok |
+| `src/main.tsx` | BrowserRouter → EventsProvider → App |
+| `tests/validation.test.mjs` | Saf fonksiyonların otomatik testleri |
+| `vercel.json` | SPA deep-link ve yenileme ayarı |
 
-Arama başlık/açıklamada, `trim` ve Türkçe harf dönüşümüyle çalışır. Kategoriyle
-birlikte uygulanır. Tarihler ISO biçiminde sıralanır, ekranda Türkçe görünür.
-Kaynak dizi değiştirilmez. Afiş isteğe bağlıdır; afişsiz detayda boş sütun oluşmaz.
+`types/page.ts`, eski `page` state'i ve `go()` kaldırıldı. Sprint 1–3 dosyaları korundu.
 
-## Form kapsamı
+## Veri akışı
 
-Ekle ve Güncelle aynı `EventForm` bileşenini kullanır; farklı başlıkla ve boş açılır.
-Form gönderiminde önce `preventDefault()`, sonra `onSubmit()` çalışır.
-App geçici olarak `window.scrollTo(0, 0)` verir; Kaydet sayfayı yenilemeden üste taşır.
-**Otomatik doldurma, doğrulama, kayıt veya backend yoktur.** Kayıt mantığı sonraki
-sprintin konusudur. Form bileşeni ne yapılacağına kendisi karar vermez.
+- EventsProvider başlangıç listesini `useState` ile tutar.
+- `addEvent`: yeni dizi; `updateEvent`: map; `deleteEvent`: filter. Kaynak dizi mutasyona uğramaz.
+- Ana Sayfa, Etkinlikler, Detay ve yönetim sayfaları aynı Context verisini kullanır.
+- Form kendi başına kayıt yapmaz; doğrulanmış veriyi `onSubmit(data)` ile sayfaya verir.
+- Ekle/güncelle tamamlanınca `/admin` açılır. Silme önce etkinlik adını içeren `window.confirm` sorar.
+- Formda olmayan mevcut afiş, düzenleme sırasında korunur.
+- Arama ve kategori state'i yalnızca EventsPage içindedir. Başlık/açıklama araması Türkçe harfleri destekler.
 
-## Vite dosyaları
+**Bu sprintte backend, gerçek oturum, e-posta gönderimi ve kalıcı kayıt yoktur.**
+`/admin` herkese açıktır. Sayfa yenilenince altı örnek etkinlik geri gelir;
+localStorage/sessionStorage kullanılmaz. Bu davranış dersin gereksinimidir.
 
-Aşağıdaki yollar `frontend/` içindedir.
+## Form doğrulaması
 
-| Dosya / klasör | Görevi |
+| Form/alan | Kural |
 |---|---|
-| `package.json` | Proje bilgilerini, komutları ve bağımlılıkları tanımlar. |
-| `package-lock.json` | Kurulan paketlerin tam sürümlerini sabitler. |
-| `node_modules/` | İndirilen paketleri içerir; GitHub'a yüklenmez. |
-| `tsconfig*.json` | TypeScript, JSX ve strict tip kontrolü ayarlarını belirler. |
-| `vite.config.ts` | Vite'ı React eklentisiyle yapılandırır. |
-| `index.html` | React'in bağlandığı `div#root` öğesini içerir. |
-| `src/main.tsx` | React'i başlatır ve App'i root içine çizer. |
-| `src/App.tsx` | State'i yönetir ve bileşenleri bir araya getirir. |
-| `src/App.css` | Sprint 4'teki tasarımı değiştirmeden korur. |
-| `src/index.css` | Yönergeye uygun olarak boştur. |
-| `public/` | `afis.svg` gibi doğrudan sunulan dosyaları içerir. |
-| `.gitignore` | `node_modules`, `dist` ve yerel dosyaları Git dışında tutar. |
+| Etkinlik adı | trim sonrası en az 3 karakter |
+| Kategori | Seçilmeli |
+| Tarih, saat, yer | Boş olamaz |
+| Kontenjan | 1–1000 arası tam sayı |
+| Açıklama | trim sonrası en az 10 karakter |
+| Giriş | E-posta @ içermeli, şifre en az 6 karakter |
+| Kayıt | Giriş kuralları + ad soyad en az 3 karakter + şifreler aynı |
+| Şifremi unuttum | E-posta @ içermeli |
 
-## GitHub ve Vercel teslimi
+Formlar `noValidate` kullanır; hatalar alan altında Türkçe gösterilir ve `aria-invalid`,
+`aria-describedby` ile ilişkilendirilir. Başarılı auth formları yalnızca demo mesajı gösterir.
 
-Kendi mevcut deponuza güncel `frontend/`, `README.md`, `BASLA_AR.md` ve `docs/`
-dosyalarını kopyalayın. **Mevcut .git klasörünüzü değiştirmeyin.**
-Kendi deponuzda bu commit/etiket henüz yoksa repository kökünde:
-
-```bash
-git add frontend README.md BASLA_AR.md docs
-git commit -m "Complete sprint 5 React components"
-git tag sprint-05
-git push
-git push --tags
-```
-
-Hazır ZIP deposunda commit ve etiket varsa tekrar oluşturmayın; kendi remote
-bağlantınızı kontrol ederek push yapın. `node_modules` ve `dist` yüklenmez.
-
-Vercel ayarları Sprint 4 ile aynıdır:
+## Vercel ayarları
 
 | Ayar | Değer |
 |---|---|
-| Root Directory | `frontend` |
-| Framework Preset | `Vite` |
+| Git repository | `AbdulrahmanZaidan/web` |
+| Production branch | `main` |
+| Root Directory | `kampus-etkinlik/frontend` |
+| Framework Preset | Vite |
+| Node.js | 24.x |
+| Install Command | `npm ci` |
 | Build Command | `npm run build` |
 | Output Directory | `dist` |
 
-GitHub bağlantısı etkinse push sonrası Vercel yeni sürümü yayınlar. Deployment'ın
-Ready durumunu ve canlı sayfayı kontrol edin. URL'de `sprint2` bulunması sorun değildir;
-yayınlanan sürüm Root Directory ve deployment tarafından belirlenir.
+Root Directory sadece `frontend` değildir; repository içinde `kampus-etkinlik` vardır.
+`vercel.json` bu frontend klasöründedir. `/events/event-2` gibi bağlantıların doğrudan
+ve yenilendiğinde açılması için index.html rewrite tanımlıdır.
+Öğretmenin istediği alan adı biçimi **isimsoyisim-frontend.vercel.app** olmalıdır.
+Mevcut `sprint2-ashy.vercel.app` adı tek başına bu isim şartını karşılamaz.
 
-## Kontrol ve son fotoğraftaki teslim maddeleri
+## Git ve teslim
 
-Yerel build, lint, beş görünüm, bağlantılar, filtreler ve etkinlik başlığı kontrolleri
-`docs/SPRINT5_KONTROL.md` içinde kayıtlıdır. Kod açıklaması ve sunum provası
-`docs/SPRINT5_ANLATIM.md` dosyasındadır.
+Çalışma tamamlandıktan ve kontroller geçtikten sonra repository kökünden:
 
-GitHub push ve canlı Vercel yayını bu ortamdan yapılmadı. Bu iki madde dosyalar
-kullanıcının deposuna gönderilip canlı deployment kontrol edildiğinde tamamlanır.
-İlk satır, kullanıcının paylaştığı proje adresidir; tek başına Sprint 5'in yayında
-olduğunu kanıtlamaz.
+```bash
+git add .
+git commit -m "Complete sprint 6 and midterm frontend"
+git tag frontend
+git push origin main
+git push origin frontend
+```
+
+Commit ve `frontend` etiketi zaten oluşturulduysa yeniden oluşturmayın.
+`node_modules`, `dist` ve yerel ayarlar Git'e eklenmez.
+GitHub Actions, push ve pull request üzerinde test, lint ve build çalıştırır.
+
+Dersin teslim kutusuna **public GitHub repository adresi** yazılır:
+https://github.com/AbdulrahmanZaidan/web
+
+Canlı yayını da açıp 13 maddelik listeyi kontrol edin. Kontrol rehberi:
+[kampus-etkinlik/docs/SPRINT6_KONTROL.md](docs/SPRINT6_KONTROL.md).
+
+## Teknik kaynaklar
+
+- https://reactrouter.com/start/declarative/routing
+- https://react.dev/reference/react/createContext
+- https://vercel.com/docs/frameworks/frontend/vite

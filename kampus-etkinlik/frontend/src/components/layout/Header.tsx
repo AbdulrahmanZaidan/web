@@ -1,15 +1,4 @@
-interface HeaderProps {
-  title: string
-  text?: string
+function Header() {
+  return <><h1>Kampüs Etkinlikleri</h1><p>Fakültedeki seminer, atölye ve söyleşileri tek yerden takip edin.</p></>
 }
-
-function Header({ title, text }: HeaderProps) {
-  return (
-    <>
-      <h1>{title}</h1>
-      {text && <p>{text}</p>}
-    </>
-  )
-}
-
 export default Header

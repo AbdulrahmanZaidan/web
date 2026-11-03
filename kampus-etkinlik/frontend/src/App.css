@@ -207,3 +207,26 @@ nav a[aria-current="page"] { color: var(--renk-koyu); background: var(--renk-yuz
 .site-header { background: var(--renk-bej); color: var(--renk-metin); }
 nav a { color: var(--renk-metin); text-shadow: none; }
 nav a:focus-visible { outline-color: var(--renk-koyu); }
+
+/* Sprint 6: doğrulama, yönetim tablosu ve mobil kartlar. */
+.hata-metni { display: block; color: var(--renk-hata); font-size: .9375rem; margin-top: var(--bosluk-xs); }
+.auth-form { max-width: 30rem; }
+.auth-links { display: flex; flex-wrap: wrap; gap: var(--bosluk-m); margin-top: var(--bosluk-m); }
+.tablo { width: 100%; border-collapse: collapse; background: var(--renk-yuzey); }
+.tablo th { background: var(--renk-koyu); color: #fff; text-align: left; }
+.tablo th, .tablo td { padding: var(--bosluk-s) var(--bosluk-m); border-bottom: 1px solid var(--renk-cizgi); }
+.tablo tbody tr:nth-child(even) { background: var(--renk-zemin); }
+.islemler { display: flex; flex-wrap: wrap; gap: var(--bosluk-s); }
+.islemler button { width: auto; min-width: 0; padding-inline: var(--bosluk-m); }
+.buton-sil { background: var(--renk-hata); }
+.buton-sil:hover { background: #8a1717; }
+.skip-link { position: absolute; left: 1rem; top: -10rem; padding: .5rem 1rem; background: white; z-index: 10; }
+.skip-link:focus { top: .5rem; }
+@media (max-width: 699px) {
+  .tablo, .tablo tbody { display: block; }
+  .tablo thead { display: none; }
+  .tablo tr { display: block; border: 1px solid var(--renk-cizgi); border-radius: var(--kose); margin-bottom: var(--bosluk-m); padding: var(--bosluk-s); }
+  .tablo td { display: block; border: 0; }
+  .tablo td.islemler { display: flex; }
+  .tablo td[data-baslik]::before { content: attr(data-baslik) ": "; font-weight: 700; }
+}
