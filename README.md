@@ -145,8 +145,6 @@ GitHub Actions, push ve pull request üzerinde test, lint ve build çalıştır�
 Dersin teslim kutusuna **public GitHub repository adresi** yazılır:
 https://github.com/AbdulrahmanZaidan/web
 
-Canlı yayını da açıp 13 maddelik listeyi kontrol edin. Kontrol rehberi:
-[kampus-etkinlik/docs/SPRINT6_KONTROL.md](kampus-etkinlik/docs/SPRINT6_KONTROL.md).
 
 ## Teknik kaynaklar
 
