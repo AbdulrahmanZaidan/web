@@ -1,4 +1,4 @@
-Canlı proje adresi: https://sprint2-ashy.vercel.app/
+Canlı proje adresi: https://abdelrahmanzidan-frontend.vercel.app/
 
 # Kampüs Etkinlikleri — Sprint 6 ve Vize
 
@@ -145,8 +145,6 @@ GitHub Actions, push ve pull request üzerinde test, lint ve build çalıştır�
 Dersin teslim kutusuna **public GitHub repository adresi** yazılır:
 https://github.com/AbdulrahmanZaidan/web
 
-Canlı yayını da açıp 13 maddelik listeyi kontrol edin. Kontrol rehberi:
-[kampus-etkinlik/docs/SPRINT6_KONTROL.md](docs/SPRINT6_KONTROL.md).
 
 ## Teknik kaynaklar
 
