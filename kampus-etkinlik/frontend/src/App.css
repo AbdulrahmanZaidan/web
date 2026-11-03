@@ -227,6 +227,6 @@ nav a:focus-visible { outline-color: var(--renk-koyu); }
   .tablo thead { display: none; }
   .tablo tr { display: block; border: 1px solid var(--renk-cizgi); border-radius: var(--kose); margin-bottom: var(--bosluk-m); padding: var(--bosluk-s); }
   .tablo td { display: block; border: 0; }
-  .tablo td.islemler { display: flex; }
+  .tablo td .islemler { display: flex; }
   .tablo td[data-baslik]::before { content: attr(data-baslik) ": "; font-weight: 700; }
 }
