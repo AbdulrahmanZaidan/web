@@ -1,4 +1,4 @@
-Canlı proje adresi: https://sprint2-ashy.vercel.app/
+Canlı proje adresi: https://abdelrahmanzidan-frontend.vercel.app/
 
 # Kampüs Etkinlikleri — Sprint 6 ve Vize
 
