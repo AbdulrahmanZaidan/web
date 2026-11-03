@@ -141,13 +141,3 @@ git push origin frontend
 Commit ve `frontend` etiketi zaten oluşturulduysa yeniden oluşturmayın.
 `node_modules`, `dist` ve yerel ayarlar Git'e eklenmez.
 GitHub Actions, push ve pull request üzerinde test, lint ve build çalıştırır.
-
-Dersin teslim kutusuna **public GitHub repository adresi** yazılır:
-https://github.com/AbdulrahmanZaidan/web
-
-
-## Teknik kaynaklar
-
-- https://reactrouter.com/start/declarative/routing
-- https://react.dev/reference/react/createContext
-- https://vercel.com/docs/frameworks/frontend/vite
