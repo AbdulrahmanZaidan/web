@@ -11,7 +11,7 @@ Router, Context, yönetim ve kontrollü form doğrulaması eklendi. Mevcut bej t
 
 > Yayın notu: Yukarıdaki adres mevcut proje adresidir. Bu sürümün canlı yayını ve
 > öğretmenin istediği `isimsoyisim-frontend.vercel.app` alan adı ayrıca doğrulanmalıdır.
-> Planlanan teslim alan adı: `abdelrahmanzidan-frontend.vercel.app` (henüz atanmış değildir).
+> Planlanan teslim alan adı: https://abdelrahmanzidan-frontend.vercel.app/
 
 ## Kurulum ve çalıştırma
 
