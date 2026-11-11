@@ -1,0 +1,19 @@
+{
+  "name": "kampus-etkinlik-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sprint 7 — Abdelrahman Zidan, 2321032807",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0"
+  }
+}
