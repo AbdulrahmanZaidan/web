@@ -1,6 +1,34 @@
+# Kampüs Etkinlikleri — Sprint 7: Express REST API
+
+**Öğrenci:** Abdelrahman Zidan · **Numara:** 2321032807
+
+Final döneminin ilk adımı: `kampus-etkinlik/backend` klasöründe bağımsız Express API.
+GET `/health`, GET `/events`, GET `/events/:id` ve POST `/events` hazırdır.
+Altı özel örnek etkinlik RAM'de tutulur. Frontend, Sprint 6 sürümüdür;
+API bağlantısı Sprint 11'de yapılacaktır. Bu sprintte Vercel ayarı değişmez.
+
+**[Backend kurulum, REST sözleşmesi ve Postman rehberi](kampus-etkinlik/backend/README.md)**
+
+Repository kökünden Windows PowerShell ile:
+
+```powershell
+cd kampus-etkinlik/backend
+npm install
+Copy-Item .env.example .env
+npm run dev
+```
+
+Git Bash/macOS/Linux için kopyalama komutu: `cp .env.example .env`.
+Kontrol: <http://localhost:3000/health>. Test: backend içinde `npm test`.
+Postman dosyası: `kampus-etkinlik/backend/requests/kampus-api.json`.
+Teslim etiketi: `sprint-07`; Git geçmişinde en az beş aşamalı commit gereklidir.
+GitHub'a push ve ders sitesine teslim kullanıcı tarafından yapılır.
+
+---
+
 Canlı proje adresi: https://abdelrahmanzidan-frontend.vercel.app/
 
-# Kampüs Etkinlikleri — Sprint 6 ve Vize
+# Sprint 6 ve Vize — Önceki aşamanın belgeleri
 
 **Öğrenci:** Abdelrahman Zidan · **Numara:** 2321032807
 
@@ -87,7 +115,7 @@ Tüm güncel uygulama `kampus-etkinlik/frontend` altındadır.
 - Formda olmayan mevcut afiş, düzenleme sırasında korunur.
 - Arama ve kategori state'i yalnızca EventsPage içindedir. Başlık/açıklama araması Türkçe harfleri destekler.
 
-**Bu sprintte backend, gerçek oturum, e-posta gönderimi ve kalıcı kayıt yoktur.**
+**Sprint 6 frontend sürümünde backend bağlantısı, gerçek oturum, e-posta gönderimi ve kalıcı kayıt yoktur.**
 `/admin` herkese açıktır. Sayfa yenilenince altı örnek etkinlik geri gelir;
 localStorage/sessionStorage kullanılmaz. Bu davranış dersin gereksinimidir.
 
