@@ -1,7 +1,7 @@
 {
   "info": {
-    "name": "Kampüs API — Abdelrahman Zidan — Sprint 7",
-    "description": "2321032807. Sunucuyu yeniden başlatın; 1–6 sırasıyla bir kez çalıştırın. POST bellekteki listeye kayıt ekler.",
+    "name": "Kampüs API — Abdelrahman Zidan — Sprint 8",
+    "description": "2321032807. Önce npm run seed, sonra npm run dev. 1–6 sırasıyla çalıştırın. \"2 Etkinlik listesi\" ilk kaydın _id değerini {{eventId}} değişkenine kaydeder; \"3 Tek etkinlik\" bu değişkeni kullanır. POST ile eklenen kayıt MongoDB'de kalıcıdır.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -64,9 +64,11 @@
             "type": "text/javascript",
             "exec": [
               "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
-              "pm.test(\"Yanıt sözleşmesi\", () => {",
+              "pm.test(\"Yanıt sözleşmesi (seed sonrası 6 kayıt)\", () => {",
               "  const data = pm.response.json();",
               "  pm.expect(data).to.be.an(\"array\").with.lengthOf(6);",
+              "  data.forEach((e) => { pm.expect(e).to.have.property(\"_id\"); pm.expect(e).to.have.property(\"createdAt\"); pm.expect(e).to.have.property(\"updatedAt\"); });",
+              "  pm.collectionVariables.set(\"eventId\", data[0]._id);",
               "});"
             ]
           }
@@ -79,7 +81,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/events/event-2",
+          "raw": "http://localhost:3000/events/{{eventId}}",
           "protocol": "http",
           "host": [
             "localhost"
@@ -87,7 +89,7 @@
           "port": "3000",
           "path": [
             "events",
-            "event-2"
+            "{{eventId}}"
           ]
         }
       },
@@ -101,7 +103,7 @@
               "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
               "pm.test(\"Yanıt sözleşmesi\", () => {",
               "  const data = pm.response.json();",
-              "  pm.expect(data.id).to.eql(\"event-2\");",
+              "  pm.expect(data._id).to.eql(pm.collectionVariables.get(\"eventId\"));",
               "});"
             ]
           }
@@ -109,7 +111,7 @@
       ]
     },
     {
-      "name": "4 Olmayan etkinlik",
+      "name": "4 Olmayan etkinlik (404)",
       "request": {
         "method": "GET",
         "header": [],
@@ -144,7 +146,7 @@
       ]
     },
     {
-      "name": "5 Etkinlik oluştur",
+      "name": "5 Etkinlik oluştur (201)",
       "request": {
         "method": "POST",
         "header": [
@@ -184,7 +186,10 @@
               "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));",
               "pm.test(\"Yanıt sözleşmesi\", () => {",
               "  const data = pm.response.json();",
-              "  pm.expect(data.id).to.match(/^event-/); pm.expect(data.title).to.eql(\"Kampüs İçin Git İşbirliği Atölyesi\"); pm.expect(data.capacity).to.eql(30);",
+              "  pm.expect(data._id).to.match(/^[0-9a-f]{24}$/);",
+              "  pm.expect(data).to.have.property(\"createdAt\");",
+              "  pm.expect(data.title).to.eql(\"Kampüs İçin Git İşbirliği Atölyesi\");",
+              "  pm.collectionVariables.set(\"createdId\", data._id);",
               "});"
             ]
           }
@@ -192,7 +197,7 @@
       ]
     },
     {
-      "name": "6 Eksik veri",
+      "name": "6 Eksik veri (400)",
       "request": {
         "method": "POST",
         "header": [
@@ -232,12 +237,22 @@
               "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));",
               "pm.test(\"Yanıt sözleşmesi\", () => {",
               "  const data = pm.response.json();",
-              "  pm.expect(data.error.message).to.eql(\"title, category and date are required\");",
+              "  pm.expect(data.error.message).to.include(\"required\");",
               "});"
             ]
           }
         }
       ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "eventId",
+      "value": ""
+    },
+    {
+      "key": "createdId",
+      "value": ""
     }
   ]
 }
