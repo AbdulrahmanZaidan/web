@@ -1,28 +1,23 @@
-# Kampüs Etkinlikleri — Sprint 7: Express REST API
+# Kampüs Etkinlikleri — Sprint 8: MongoDB ve Mongoose
 
 **Öğrenci:** Abdelrahman Zidan · **Numara:** 2321032807
 
-Final döneminin ilk adımı: `kampus-etkinlik/backend` klasöründe bağımsız Express API.
-GET `/health`, GET `/events`, GET `/events/:id` ve POST `/events` hazırdır.
-Altı özel örnek etkinlik RAM'de tutulur. Frontend, Sprint 6 sürümüdür;
-API bağlantısı Sprint 11'de yapılacaktır. Bu sprintte Vercel ayarı değişmez.
+Sprint 7'deki Express API, verisini artık MongoDB Atlas'ta tutar (Mongoose).
+Endpoint'ler ve durum kodları aynıdır; POST ile eklenen kayıtlar sunucu yeniden
+başlayınca kaybolmaz. Frontend (Sprint 6) değişmedi.
 
-**[Backend kurulum, REST sözleşmesi ve Postman rehberi](backend/README.md)**
+**[Backend kurulum, schema, REST sözleşmesi ve Postman rehberi](backend/README.md)**
 
-Repository kökünden Windows PowerShell ile:
-
-```powershell
+```bash
 cd kampus-etkinlik/backend
 npm install
-Copy-Item .env.example .env
+cp .env.example .env    # MONGODB_URI'ye kendi Atlas adresinizi yazın
+npm run seed
 npm run dev
 ```
 
-Git Bash/macOS/Linux için kopyalama komutu: `cp .env.example .env`.
 Kontrol: <http://localhost:3000/health>. Test: backend içinde `npm test`.
 Postman dosyası: `kampus-etkinlik/backend/requests/kampus-api.json`.
-Teslim etiketi: `sprint-07`; Git geçmişinde en az beş aşamalı commit gereklidir.
-GitHub'a push ve ders sitesine teslim kullanıcı tarafından yapılır.
 
 ---
 
