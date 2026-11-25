@@ -1,11 +1,11 @@
-# Kampüs Etkinlikleri — Sprint 8: MongoDB ve Mongoose
+# Kampüs Etkinlikleri — Sprint 9: Tam CRUD ve sorgular
 
 **Öğrenci:** Abdelrahman Zidan · **Numara:** 2321032807
 
-`kampus-etkinlik/backend` klasöründeki Express API artık MongoDB Atlas + Mongoose kullanır.
-GET `/health`, GET `/events`, GET `/events/:id` ve POST `/events` veriyi veritabanından okur/yazar;
-örnek veri `npm run seed` ile eklenir ve kayıtlar sunucu yeniden başlayınca kaybolmaz. Frontend, Sprint 6 sürümüdür;
-API bağlantısı Sprint 11'de yapılacaktır. Bu sprintte Vercel ayarı değişmez.
+`kampus-etkinlik/backend` klasöründeki Express + MongoDB API artık tam CRUD'dur:
+GET, POST, **PATCH**, **DELETE**, `?search=` / `?category=` filtreleri ve `GET /events/upcoming`.
+Tarihler API'de `GG-AA-YYYY`, veritabanında `Date`'tir. Örnek veri `npm run seed` ile eklenir.
+Frontend, Sprint 6 sürümüdür; API bağlantısı Sprint 11'de yapılacaktır. Vercel ayarı değişmez.
 
 **[Backend kurulum, REST sözleşmesi ve Postman rehberi](kampus-etkinlik/backend/README.md)**
 
@@ -21,7 +21,8 @@ npm run dev
 
 Git Bash/macOS/Linux için kopyalama komutu: `cp .env.example .env`.
 Kontrol: <http://localhost:3000/health>. Test: backend içinde `npm test`.
-Postman dosyası: `kampus-etkinlik/backend/requests/kampus-api.json`.
+Postman dosyası: `kampus-etkinlik/backend/requests/kampus-api.json` (18 istek, 45 test);
+sonuç: `run-results.json`. Masada kontrol: `newman run https://webdersi.vercel.app/test.json`.
 Teslim: her adım ayrı commit; gerçek Atlas adresi/şifresi hiçbir commit'te yer almaz.
 GitHub'a push ve ders sitesine teslim kullanıcı tarafından yapılır.
 

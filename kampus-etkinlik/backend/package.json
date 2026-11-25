@@ -2,7 +2,7 @@
   "name": "kampus-etkinlik-backend",
   "version": "1.0.0",
   "private": true,
-  "description": "Sprint 8 — Abdelrahman Zidan, 2321032807",
+  "description": "Sprint 9 — Abdelrahman Zidan, 2321032807",
   "type": "module",
   "scripts": {
     "dev": "node --watch src/server.js",
