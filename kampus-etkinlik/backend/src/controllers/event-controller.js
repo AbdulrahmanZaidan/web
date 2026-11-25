@@ -19,9 +19,15 @@ function pickAllowed(body) {
 
 export async function getEvents(req, res, next) {
   try {
-    const filter = typeof req.query.category === "string"
-      ? { category: req.query.category }
-      : {};
+    const { category, search } = req.query;
+    const filter = {};
+    // typeof: ?search=a&search=b dizi gelir; metin olmayan değer yok sayılır (500 olmaz).
+    if (typeof category === "string" && category) filter.category = category;
+    if (typeof search === "string" && search) {
+      // ( * ? gibi işaretler aramayı bozmasın
+      const guvenli = search.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      filter.title = { $regex: guvenli, $options: "i" };
+    }
     const events = await Event.find(filter).sort({ date: 1 });
     res.json(events);
   } catch (err) {
