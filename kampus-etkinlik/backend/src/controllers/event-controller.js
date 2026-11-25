@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { Event } from "../models/event-model.js";
+import { todayStart } from "../utils/date.js";
 
 // İstemcinin gönderebileceği alanlar; _id, createdAt gibi alanlar sunucuya aittir.
 const ALLOWED_FIELDS = ["title", "category", "capacity", "date", "time", "location", "description"];
@@ -29,6 +30,16 @@ export async function getEvents(req, res, next) {
       filter.title = { $regex: guvenli, $options: "i" };
     }
     const events = await Event.find(filter).sort({ date: 1 });
+    res.json(events);
+  } catch (err) {
+    next(err);
+  }
+}
+
+export async function getUpcomingEvents(req, res, next) {
+  try {
+    // Bugün ve sonrası, en yakın önce. date gerçek Date olduğu için sıralama takvime göredir.
+    const events = await Event.find({ date: { $gte: todayStart() } }).sort({ date: 1, time: 1 });
     res.json(events);
   } catch (err) {
     next(err);
