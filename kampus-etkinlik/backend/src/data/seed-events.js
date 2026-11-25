@@ -1,11 +1,12 @@
 // npm run seed ile veritabanına eklenen altı örnek etkinlik.
+// Tarihler "GG-AA-YYYY"; ilk ikisi geçmişte kalır, /events/upcoming farkı görünsün diye.
 // id alanı yok: her kayda MongoDB kendi _id değerini verir.
 export const seedEvents = [
   {
     title: "Kampüste Açık Kaynak Buluşması",
     category: "Seminer",
     capacity: 90,
-    date: "2026-11-18",
+    date: "15-10-2026",
     time: "14:00",
     location: "Merkez Kütüphane Seminer Odası",
     description: "Öğrenciler küçük açık kaynak projelerini tanıtır, ilk katkı için uygun görevleri birlikte seçer.",
@@ -14,7 +15,7 @@ export const seedEvents = [
     title: "Sensörlerle Akıllı Saksı Atölyesi",
     category: "Atölye",
     capacity: 24,
-    date: "2026-11-20",
+    date: "05-11-2026",
     time: "10:30",
     location: "Mühendislik Fakültesi Prototip Odası",
     description: "Toprak nemini ölçen bir devre kurulur ve bitki bakımını kolaylaştıran basit bir uyarı sistemi geliştirilir.",
@@ -23,7 +24,7 @@ export const seedEvents = [
     title: "Uluslararası Öğrencilerle Teknoloji Sohbeti",
     category: "Söyleşi",
     capacity: 60,
-    date: "2026-11-25",
+    date: "03-12-2026",
     time: "13:00",
     location: "Öğrenci Merkezi Kültür Salonu",
     description: "Farklı ülkelerden öğrenciler yazılım öğrenme deneyimlerini ve ortak proje fikirlerini paylaşır.",
@@ -32,7 +33,7 @@ export const seedEvents = [
     title: "Erişilebilir Kampüs Haritası Tasarımı",
     category: "Atölye",
     capacity: 28,
-    date: "2026-12-02",
+    date: "02-12-2026",
     time: "15:00",
     location: "Tasarım Stüdyosu 3",
     description: "Kampüsteki erişilebilir yollar için klavye ile kullanılabilen bir harita arayüzünün taslağı hazırlanır.",
@@ -41,7 +42,7 @@ export const seedEvents = [
     title: "Öğrenci Projelerinde Veri Gizliliği",
     category: "Seminer",
     capacity: 75,
-    date: "2026-12-08",
+    date: "08-12-2026",
     time: "11:00",
     location: "Bilgi İşlem Eğitim Salonu",
     description: "Gereksiz kişisel veri toplamadan uygulama geliştirme, örnek veri üretme ve güvenli paylaşım yöntemleri ele alınır.",
@@ -50,7 +51,7 @@ export const seedEvents = [
     title: "İlk Mobil Oyunumu Nasıl Yaptım?",
     category: "Söyleşi",
     capacity: 50,
-    date: "2026-12-15",
+    date: "15-12-2026",
     time: "16:00",
     location: "Gençlik Atölyesi Etkinlik Odası",
     description: "Öğrenci geliştiriciler ilk oyunlarındaki tasarım kararlarını, karşılaştıkları hataları ve test süreçlerini anlatır.",
