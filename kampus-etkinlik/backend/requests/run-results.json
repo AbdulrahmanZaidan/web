@@ -2,7 +2,7 @@
   "collection": {
     "item": [
       {
-        "id": "b5f772a5-3bbe-42fc-a0cb-764a3a056cde",
+        "id": "399e2fff-e096-4367-b79a-f86c88f73e62",
         "name": "01 Health",
         "request": {
           "url": {
@@ -22,7 +22,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "293d94d6-0cfe-4ca4-983e-8e7ff03e8b97",
+              "id": "c6651e8b-141a-402c-b82c-a37d0c0c2172",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
@@ -30,13 +30,13 @@
                 "pm.test(\"status ok\", () => pm.expect(b.status).to.eql(\"ok\"));",
                 "pm.test(\"student dolu\", () => pm.expect(String(b.student || \"\")).to.match(/\\d{6,}/));"
               ],
-              "_lastExecutionId": "4208e102-7f39-4891-b838-8f7b87db90f1"
+              "_lastExecutionId": "fc0a1013-0702-4541-a4d5-9a9fd30bfb22"
             }
           }
         ]
       },
       {
-        "id": "29338428-76e4-4583-95ab-db2c83d34700",
+        "id": "fb003062-c361-467a-a77f-a2ad93136869",
         "name": "02 Etkinlik listesi",
         "request": {
           "url": {
@@ -56,7 +56,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "03c26b95-6d4a-40c9-a7de-a55246be57eb",
+              "id": "4276abd5-a3db-48b5-9afa-8798d4839a71",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
@@ -68,13 +68,13 @@
                 "pm.collectionVariables.set(\"eventId\", list[0]._id);",
                 "pm.collectionVariables.set(\"toplam\", list.length);"
               ],
-              "_lastExecutionId": "4b894101-0a90-4003-9b72-a67e019ef889"
+              "_lastExecutionId": "18f24c8a-2bc6-4290-903c-14472dcb4bde"
             }
           }
         ]
       },
       {
-        "id": "b8b73d9d-1900-483c-a45b-2a7a2bd7967a",
+        "id": "1dd77d61-fff1-4008-8540-3eb07b073d7a",
         "name": "03 Tek etkinlik",
         "request": {
           "url": {
@@ -95,19 +95,19 @@
           {
             "listen": "test",
             "script": {
-              "id": "67fa7d13-22d2-4a24-b0a9-6f2da64c2c69",
+              "id": "556b83d7-48cc-4405-89c1-68439f54af53",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
                 "pm.test(\"doğru kayıt\", () => pm.expect(pm.response.json()._id).to.eql(pm.collectionVariables.get(\"eventId\")));"
               ],
-              "_lastExecutionId": "75bfff07-0e95-488e-a688-7f2d3864d3d1"
+              "_lastExecutionId": "b6a448d0-4129-422b-b240-f650fc16ee57"
             }
           }
         ]
       },
       {
-        "id": "f65e5e22-391a-4e55-a718-147a4a954016",
+        "id": "24857930-4cbb-4562-9e1a-6705b98dee09",
         "name": "04 Olmayan etkinlik (404)",
         "request": {
           "url": {
@@ -128,19 +128,19 @@
           {
             "listen": "test",
             "script": {
-              "id": "3ac5abcd-27d4-47ed-a8d2-f17aed3d0f4b",
+              "id": "c738cd8f-b57f-4db7-b0c9-5e0d4176b00d",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"status 404\", () => pm.response.to.have.status(404));",
                 "pm.test(\"hata mesajı var\", () => pm.expect(pm.response.json().error.message).to.be.a(\"string\"));"
               ],
-              "_lastExecutionId": "4e4f16e2-d68e-4428-bc96-90d4d1fbd439"
+              "_lastExecutionId": "ddd5fa28-9a3a-4c08-ae41-e13a207c2c1d"
             }
           }
         ]
       },
       {
-        "id": "ec5d4998-b686-49d5-b005-004512548d92",
+        "id": "a99d64e3-9889-4da0-8431-8b6aaf7b770d",
         "name": "05 Etkinlik oluştur (201)",
         "request": {
           "url": {
@@ -175,7 +175,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "c8eb42d6-84c9-48b4-ac33-13e7b8d1ffb2",
+              "id": "49f303b3-26db-4725-94db-b96f6b181cf7",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"status 201\", () => pm.response.to.have.status(201));",
@@ -184,13 +184,13 @@
                 "pm.test(\"tarih 20-12-2026\", () => pm.expect(e.date).to.eql(\"20-12-2026\"));",
                 "pm.collectionVariables.set(\"newId\", e._id);"
               ],
-              "_lastExecutionId": "7b8c18ab-48c0-418b-86c8-16d9a0c037e2"
+              "_lastExecutionId": "3e51c5e3-1d22-4a17-8af0-43e03e965e47"
             }
           }
         ]
       },
       {
-        "id": "af686a6b-c6f5-4b4d-b29c-7f2c351c5dea",
+        "id": "7a1f8006-4371-4231-8ce1-27eca018596d",
         "name": "06 Eksik veri (400)",
         "request": {
           "url": {
@@ -225,19 +225,19 @@
           {
             "listen": "test",
             "script": {
-              "id": "2f54a3e1-ba19-43e7-bdd7-5268ddd7613f",
+              "id": "efd014c4-18a6-42e8-811f-42b2a71c593f",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"status 400\", () => pm.response.to.have.status(400));",
                 "pm.test(\"hata mesajı var\", () => pm.expect(pm.response.json().error.message).to.be.a(\"string\"));"
               ],
-              "_lastExecutionId": "1b7bbe9f-3af9-47ac-97a3-1c3403a4f3e7"
+              "_lastExecutionId": "2fc4e9ec-9efa-4750-853c-fe807f4e4ed2"
             }
           }
         ]
       },
       {
-        "id": "7f3c033c-4de0-4868-b1ef-485f0223761d",
+        "id": "576ad2cc-50a6-497e-a55f-88b040d9d28a",
         "name": "07 Yanlış tarih biçimi (400)",
         "request": {
           "url": {
@@ -272,19 +272,19 @@
           {
             "listen": "test",
             "script": {
-              "id": "638cc576-6f0e-4480-8c9f-ab18bfbb2787",
+              "id": "793b9e46-824b-4ea5-86a7-2774bade3b80",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"status 400\", () => pm.response.to.have.status(400));",
                 "pm.test(\"hata mesajı var\", () => pm.expect(pm.response.json().error.message).to.be.a(\"string\"));"
               ],
-              "_lastExecutionId": "237614a6-6b48-426d-aa23-7f4758de2068"
+              "_lastExecutionId": "48243327-83df-46d1-b01d-ec6d8685fc3a"
             }
           }
         ]
       },
       {
-        "id": "f16f5937-4d03-4f2c-95ab-24bf54d1e43a",
+        "id": "09cd0b3c-acfc-4ffb-8735-fc7e02ee72f1",
         "name": "08 Güncelle (200)",
         "request": {
           "url": {
@@ -320,7 +320,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "9570a54c-489c-4d77-8f39-8dde5d8b88ed",
+              "id": "1662cf97-28c7-4f36-8c65-92c3b36251af",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
@@ -328,13 +328,13 @@
                 "pm.test(\"capacity 55\", () => pm.expect(e.capacity).to.eql(55));",
                 "pm.test(\"diğer alanlar değişmedi\", () => pm.expect(e.title).to.eql(\"Runner Test Etkinliği\"));"
               ],
-              "_lastExecutionId": "7f2fcd4f-5374-4252-9576-f8a2bb75a1e9"
+              "_lastExecutionId": "b3fc41b6-564b-4962-a57e-f0aaec3bb689"
             }
           }
         ]
       },
       {
-        "id": "1d663612-8d9f-4ef9-b7ab-77e0d7f590f2",
+        "id": "8a28de05-a7e3-4aaa-9c8f-b661ddd566d3",
         "name": "09 Tarih güncelle (200)",
         "request": {
           "url": {
@@ -370,19 +370,19 @@
           {
             "listen": "test",
             "script": {
-              "id": "59b6fa92-8c7a-431f-aa79-ea335a868b09",
+              "id": "3a2c5650-bf54-41f0-87b2-fb13f2594960",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
                 "pm.test(\"tarih 25-12-2026\", () => pm.expect(pm.response.json().date).to.eql(\"25-12-2026\"));"
               ],
-              "_lastExecutionId": "617be3e9-6184-4e5b-a48a-d2bcd3becb81"
+              "_lastExecutionId": "d6778285-9aef-4239-87c2-3c26ec8628c1"
             }
           }
         ]
       },
       {
-        "id": "923c10b3-f6fa-4d0c-8183-525c8d1af36c",
+        "id": "b3b7046a-ea76-4aa3-a324-00251e3c0d36",
         "name": "10 Boş body (400)",
         "request": {
           "url": {
@@ -418,19 +418,19 @@
           {
             "listen": "test",
             "script": {
-              "id": "9d347f7f-cab9-43bc-b2c0-9fd27e60e13b",
+              "id": "85a35e68-c361-4032-adca-bdc181a5e75c",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"status 400\", () => pm.response.to.have.status(400));",
                 "pm.test(\"hata mesajı var\", () => pm.expect(pm.response.json().error.message).to.be.a(\"string\"));"
               ],
-              "_lastExecutionId": "1f562fba-fdbf-4d91-b645-bb18637bd2ec"
+              "_lastExecutionId": "85574e98-ec08-4153-b096-58bb5e103f28"
             }
           }
         ]
       },
       {
-        "id": "8be2e1b5-fbc4-411d-9fee-43a1d3ef2ffb",
+        "id": "d5a66679-b8a7-4f3a-96a2-6cf5f8648b11",
         "name": "11 Geçersiz kategori (400)",
         "request": {
           "url": {
@@ -466,19 +466,19 @@
           {
             "listen": "test",
             "script": {
-              "id": "9fd928f9-d4ea-4b37-811e-54042b32ba32",
+              "id": "c74fb01e-26fb-40b6-953e-85381b279ff5",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"status 400\", () => pm.response.to.have.status(400));",
                 "pm.test(\"hata mesajı var\", () => pm.expect(pm.response.json().error.message).to.be.a(\"string\"));"
               ],
-              "_lastExecutionId": "46612ab3-9757-478a-a1a9-8a82dc8985fd"
+              "_lastExecutionId": "0b2d08c4-a453-483e-868c-4d74a252f86a"
             }
           }
         ]
       },
       {
-        "id": "be666225-ee44-4b4a-9199-404d14c18bc6",
+        "id": "bd608ec0-ecf2-4876-8086-f659e5d434ff",
         "name": "12 _id değiştirme (400)",
         "request": {
           "url": {
@@ -514,19 +514,19 @@
           {
             "listen": "test",
             "script": {
-              "id": "3832a55b-25f5-4390-b2ec-a9aa66921316",
+              "id": "df56cb81-eb2b-405a-8c46-773ec514e9b6",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"status 400\", () => pm.response.to.have.status(400));",
                 "pm.test(\"hata mesajı var\", () => pm.expect(pm.response.json().error.message).to.be.a(\"string\"));"
               ],
-              "_lastExecutionId": "1553832c-63d3-442f-8735-bc8ada215500"
+              "_lastExecutionId": "40bf648f-1e94-425f-80f0-396f5ea2e9d1"
             }
           }
         ]
       },
       {
-        "id": "f79beffe-7186-4034-a6d2-f1599193b336",
+        "id": "57316b22-cb85-47ac-a291-77f8abac60ee",
         "name": "13 Olmayan id güncelle (404)",
         "request": {
           "url": {
@@ -562,19 +562,19 @@
           {
             "listen": "test",
             "script": {
-              "id": "b4fece0e-d919-42f8-9646-2a4f15ab93e1",
+              "id": "54143d3c-892f-4131-b5be-d403cd14ad9a",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"status 404\", () => pm.response.to.have.status(404));",
                 "pm.test(\"hata mesajı var\", () => pm.expect(pm.response.json().error.message).to.be.a(\"string\"));"
               ],
-              "_lastExecutionId": "8588f0a4-c5d3-47ad-bc9a-a996525e7327"
+              "_lastExecutionId": "adfc4507-0a3d-47b8-be08-6c0e26fdbd3d"
             }
           }
         ]
       },
       {
-        "id": "99b44d2a-8624-4d82-a868-a524c0309893",
+        "id": "ed19f4e1-b449-4883-8bec-08481f94ce4f",
         "name": "14 Arama",
         "request": {
           "url": {
@@ -599,7 +599,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "fa792663-0597-4c3c-ab4f-5c917084b6f5",
+              "id": "caf69970-0d46-41a8-a36c-c4329cca2730",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
@@ -607,13 +607,13 @@
                 "pm.test(\"en az 1 sonuç\", () => pm.expect(list.length).to.be.at.least(1));",
                 "pm.test(\"hepsinin başlığında atölye\", () => list.forEach((e) => pm.expect(e.title.toLocaleLowerCase(\"tr\")).to.include(\"atölye\")));"
               ],
-              "_lastExecutionId": "99ea52f9-bbb4-4b56-ab70-e534135dbf0a"
+              "_lastExecutionId": "90ee6176-4853-41c7-85d4-93d3cd978de9"
             }
           }
         ]
       },
       {
-        "id": "4c82c1ce-7468-4c6b-8dd8-f95401b28be8",
+        "id": "8c71c9b3-cf03-482c-aa6b-331eb4165aa0",
         "name": "15 Arama + kategori",
         "request": {
           "url": {
@@ -642,7 +642,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "be67d4a4-b5f9-4b59-967b-2d2962a8181f",
+              "id": "3995f9ae-af65-4388-8707-50718ecebf43",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
@@ -650,13 +650,13 @@
                 "pm.test(\"hepsi Atölye kategorisinde\", () => list.forEach((e) => pm.expect(e.category).to.eql(\"Atölye\")));",
                 "pm.test(\"hepsinin başlığında atölye\", () => list.forEach((e) => pm.expect(e.title.toLocaleLowerCase(\"tr\")).to.include(\"atölye\")));"
               ],
-              "_lastExecutionId": "f1034cfe-4cd5-445d-bd28-b3fae18ca422"
+              "_lastExecutionId": "61092bb7-ac4a-458a-8743-32e9c4e43b56"
             }
           }
         ]
       },
       {
-        "id": "98ec3edc-e883-4b51-a9ec-ff5c4e3fbf9d",
+        "id": "be07cb8f-ca1c-405a-8302-6924c0516fba",
         "name": "16 Yaklaşan etkinlikler",
         "request": {
           "url": {
@@ -677,7 +677,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "1cfe8552-56bf-4049-9660-06042780a9a8",
+              "id": "3d44e8cb-78ed-4b7c-af03-cec024f3b1b4",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
@@ -688,13 +688,13 @@
                 "pm.test(\"en yakın önce\", () => list.forEach((e, i) => i && pm.expect(d(e.date)).to.be.at.least(d(list[i - 1].date))));",
                 "pm.test(\"seed'deki geçmiş etkinlikler elendi\", () => pm.expect(list.length).to.be.below(Number(pm.collectionVariables.get(\"toplam\")) + 1));"
               ],
-              "_lastExecutionId": "95afd933-5cef-4d9b-8ae2-777be1e377e9"
+              "_lastExecutionId": "18d025ff-c2c6-4885-a2cc-ed74dec9b993"
             }
           }
         ]
       },
       {
-        "id": "9be57430-e915-40cc-86a3-aa407d3ebe28",
+        "id": "5896516e-bbd0-4092-b99c-0e9dddc6c778",
         "name": "17 Sil (204)",
         "request": {
           "url": {
@@ -715,19 +715,19 @@
           {
             "listen": "test",
             "script": {
-              "id": "91160436-9f74-47d2-8556-70e8528d5236",
+              "id": "98c59e19-e08f-4ffa-8f41-32909d4432bf",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"status 204\", () => pm.response.to.have.status(204));",
                 "pm.test(\"gövde boş\", () => pm.expect(pm.response.text()).to.eql(\"\"));"
               ],
-              "_lastExecutionId": "1f819c38-f1f4-4f0f-b355-f6a63c8c62b1"
+              "_lastExecutionId": "ca12d43c-4a3d-4907-88cf-b5689f92c49a"
             }
           }
         ]
       },
       {
-        "id": "10afa3ab-75f8-43c7-ba53-d1651b267483",
+        "id": "a4ca1592-75cd-44b9-bbc4-0bdc8bbf2fe8",
         "name": "18 Tekrar sil (404)",
         "request": {
           "url": {
@@ -748,13 +748,13 @@
           {
             "listen": "test",
             "script": {
-              "id": "474a4667-1a8e-4343-997e-a10cda9337bc",
+              "id": "5406c145-b03e-493b-b5ef-3a4fddd489b7",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"status 404\", () => pm.response.to.have.status(404));",
                 "pm.test(\"hata mesajı var\", () => pm.expect(pm.response.json().error.message).to.be.a(\"string\"));"
               ],
-              "_lastExecutionId": "641d4d15-2bd9-47fd-a0ed-fc6832fc5bed"
+              "_lastExecutionId": "362d3adf-251b-4e79-91c5-2388fdc84a3e"
             }
           }
         ]
@@ -784,7 +784,7 @@
       }
     ],
     "info": {
-      "_postman_id": "32f5c835-f606-4684-bb90-6067e7bfa601",
+      "_postman_id": "5dd46e01-bd4f-4032-9de9-cfe9d5d6b183",
       "name": "Kampüs API · Sprint 9",
       "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
       "description": {
@@ -794,11 +794,11 @@
     }
   },
   "environment": {
-    "id": "05bc6c86-28de-4273-9f66-2f7dc8a357cb",
+    "id": "f3b07696-7b12-476c-a975-0309342cbd5a",
     "values": []
   },
   "globals": {
-    "id": "d2cf36e4-a5d4-4563-a84d-a002ededda69",
+    "id": "013128d5-ff92-46cc-b1f0-1c20b96adeec",
     "values": []
   },
   "run": {
@@ -850,10 +850,10 @@
       }
     },
     "timings": {
-      "responseAverage": 3.1666666666666665,
-      "responseMin": 1,
-      "responseMax": 13,
-      "responseSd": 3.2015621187164243,
+      "responseAverage": 203.05555555555554,
+      "responseMin": 2,
+      "responseMax": 797,
+      "responseSd": 249.6854626263083,
       "dnsAverage": 0,
       "dnsMin": 0,
       "dnsMax": 0,
@@ -862,8 +862,8 @@
       "firstByteMin": 0,
       "firstByteMax": 0,
       "firstByteSd": 0,
-      "started": 1795588458529,
-      "completed": 1795588458756
+      "started": 1795588978683,
+      "completed": 1795588982596
     },
     "executions": [
       {
@@ -876,11 +876,11 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "b9e4cb62-4fea-4764-a04f-94780286d539",
-          "httpRequestId": "2b97ddf7-2a6e-4cba-9cda-88ab9e44a49e"
+          "ref": "ecb7cad1-83de-41d6-9f08-f879c4a204c1",
+          "httpRequestId": "1e82186d-3a25-4a40-a791-28a47129e7ee"
         },
         "item": {
-          "id": "b5f772a5-3bbe-42fc-a0cb-764a3a056cde",
+          "id": "399e2fff-e096-4367-b79a-f86c88f73e62",
           "name": "01 Health",
           "request": {
             "url": {
@@ -900,7 +900,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "293d94d6-0cfe-4ca4-983e-8e7ff03e8b97",
+                "id": "c6651e8b-141a-402c-b82c-a37d0c0c2172",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
@@ -908,7 +908,7 @@
                   "pm.test(\"status ok\", () => pm.expect(b.status).to.eql(\"ok\"));",
                   "pm.test(\"student dolu\", () => pm.expect(String(b.student || \"\")).to.match(/\\d{6,}/));"
                 ],
-                "_lastExecutionId": "4208e102-7f39-4891-b838-8f7b87db90f1"
+                "_lastExecutionId": "fc0a1013-0702-4541-a4d5-9a9fd30bfb22"
               }
             }
           ]
@@ -944,7 +944,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "0fabe048-97cc-4759-b82e-6747db938b65",
+              "value": "0070256d-2088-4dd0-be5c-f20573d39854",
               "system": true
             },
             {
@@ -966,7 +966,7 @@
           "method": "GET"
         },
         "response": {
-          "id": "ff41f67a-eb38-4a52-8670-2d68ef8db6d8",
+          "id": "1b6c51af-e80f-4e06-8fe1-34ce08c508cd",
           "status": "OK",
           "code": 200,
           "header": [
@@ -988,11 +988,11 @@
             },
             {
               "key": "ETag",
-              "value": "W/\"48-8MBf0EEOW3ipEefqOUYMaF9TRqY\""
+              "value": "W/\"48-1s6/LeoMK3JIA+kh41SEyu+Qb10\""
             },
             {
               "key": "Date",
-              "value": "Wed, 25 Nov 2026 06:34:18 GMT"
+              "value": "Wed, 25 Nov 2026 06:42:58 GMT"
             },
             {
               "key": "Connection",
@@ -1043,15 +1043,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
+              53,
               56,
               46,
-              53,
-              52,
-              51,
+              54,
+              57,
+              55,
               90,
               34,
               44,
@@ -1081,10 +1081,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 13,
+          "responseTime": 9,
           "responseSize": 72
         },
-        "id": "b5f772a5-3bbe-42fc-a0cb-764a3a056cde",
+        "id": "399e2fff-e096-4367-b79a-f86c88f73e62",
         "assertions": [
           {
             "assertion": "status 200",
@@ -1102,15 +1102,15 @@
       },
       {
         "cursor": {
-          "ref": "3c01af77-4d25-46be-9903-6f525a63e584",
+          "ref": "e18cd250-9755-416a-9bcf-1b0d74e8497f",
           "length": 18,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "25f49416-d5fd-4e77-b9dc-691d7762e7eb"
+          "httpRequestId": "699feac5-9c00-4eb3-a281-d25ef3c28b4c"
         },
         "item": {
-          "id": "29338428-76e4-4583-95ab-db2c83d34700",
+          "id": "fb003062-c361-467a-a77f-a2ad93136869",
           "name": "02 Etkinlik listesi",
           "request": {
             "url": {
@@ -1130,7 +1130,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "03c26b95-6d4a-40c9-a7de-a55246be57eb",
+                "id": "4276abd5-a3db-48b5-9afa-8798d4839a71",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
@@ -1142,7 +1142,7 @@
                   "pm.collectionVariables.set(\"eventId\", list[0]._id);",
                   "pm.collectionVariables.set(\"toplam\", list.length);"
                 ],
-                "_lastExecutionId": "4b894101-0a90-4003-9b72-a67e019ef889"
+                "_lastExecutionId": "18f24c8a-2bc6-4290-903c-14472dcb4bde"
               }
             }
           ]
@@ -1178,7 +1178,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "1c42e6ee-2dd0-44e6-97bf-ad4b0bec5b8f",
+              "value": "38b10599-6e35-4a3e-9bf8-28e203f0c2e6",
               "system": true
             },
             {
@@ -1200,7 +1200,7 @@
           "method": "GET"
         },
         "response": {
-          "id": "1cbdfbd3-8234-48df-bb7b-708e062cf507",
+          "id": "7455af01-c7c1-41c7-a660-0f3c6549df8a",
           "status": "OK",
           "code": 200,
           "header": [
@@ -1222,11 +1222,11 @@
             },
             {
               "key": "ETag",
-              "value": "W/\"9da-rmVg5ecYCFskpvnEt1AcFeD1NL0\""
+              "value": "W/\"9da-G3uLciVyqmGv5X6fopCWrMSMD98\""
             },
             {
               "key": "Date",
-              "value": "Wed, 25 Nov 2026 06:34:18 GMT"
+              "value": "Wed, 25 Nov 2026 06:42:58 GMT"
             },
             {
               "key": "Connection",
@@ -1254,25 +1254,25 @@
               48,
               54,
               56,
+              51,
+              54,
+              50,
+              102,
               49,
-              54,
-              54,
-              100,
-              98,
-              52,
-              57,
-              100,
-              100,
-              55,
-              55,
-              101,
-              55,
-              97,
+              51,
               55,
               56,
-              48,
-              100,
+              51,
               101,
+              51,
+              97,
+              101,
+              51,
+              49,
+              54,
+              57,
+              100,
+              48,
               34,
               44,
               34,
@@ -1599,15 +1599,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
               50,
+              53,
               90,
               34,
               44,
@@ -1638,15 +1638,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
               50,
+              53,
               90,
               34,
               125,
@@ -1664,25 +1664,25 @@
               48,
               54,
               56,
+              51,
+              54,
+              50,
+              102,
               49,
-              54,
-              54,
-              100,
-              98,
-              52,
-              57,
-              100,
-              100,
-              55,
-              55,
-              101,
-              55,
-              97,
+              51,
               55,
               56,
-              48,
+              51,
+              101,
+              51,
+              97,
+              101,
+              51,
+              49,
+              54,
+              57,
               100,
-              102,
+              49,
               34,
               44,
               34,
@@ -2025,15 +2025,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               44,
@@ -2064,15 +2064,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               125,
@@ -2090,25 +2090,25 @@
               48,
               54,
               56,
+              51,
+              54,
+              50,
+              102,
               49,
-              54,
-              54,
-              100,
-              98,
-              52,
-              57,
-              100,
-              100,
-              55,
-              55,
-              101,
-              55,
-              97,
+              51,
               55,
               56,
-              48,
+              51,
               101,
+              51,
+              97,
+              101,
+              51,
               49,
+              54,
+              57,
+              100,
+              51,
               34,
               44,
               34,
@@ -2434,15 +2434,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               44,
@@ -2473,15 +2473,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               125,
@@ -2499,25 +2499,25 @@
               48,
               54,
               56,
+              51,
+              54,
+              50,
+              102,
               49,
-              54,
-              54,
-              100,
-              98,
-              52,
-              57,
-              100,
-              100,
-              55,
-              55,
-              101,
-              55,
-              97,
+              51,
               55,
               56,
-              48,
+              51,
               101,
-              48,
+              51,
+              97,
+              101,
+              51,
+              49,
+              54,
+              57,
+              100,
+              50,
               34,
               44,
               34,
@@ -2853,15 +2853,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               44,
@@ -2892,15 +2892,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               125,
@@ -2918,25 +2918,25 @@
               48,
               54,
               56,
+              51,
+              54,
+              50,
+              102,
               49,
-              54,
-              54,
-              100,
-              98,
-              52,
-              57,
-              100,
-              100,
-              55,
-              55,
-              101,
-              55,
-              97,
+              51,
               55,
               56,
-              48,
+              51,
               101,
-              50,
+              51,
+              97,
+              101,
+              51,
+              49,
+              54,
+              57,
+              100,
+              52,
               34,
               44,
               34,
@@ -3276,15 +3276,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               44,
@@ -3315,15 +3315,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               125,
@@ -3341,25 +3341,25 @@
               48,
               54,
               56,
+              51,
+              54,
+              50,
+              102,
               49,
-              54,
-              54,
-              100,
-              98,
-              52,
-              57,
-              100,
-              100,
-              55,
-              55,
-              101,
-              55,
-              97,
+              51,
               55,
               56,
-              48,
+              51,
               101,
               51,
+              97,
+              101,
+              51,
+              49,
+              54,
+              57,
+              100,
+              53,
               34,
               44,
               34,
@@ -3710,15 +3710,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               44,
@@ -3749,15 +3749,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               125,
@@ -3765,10 +3765,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 4,
+          "responseTime": 153,
           "responseSize": 2522
         },
-        "id": "29338428-76e4-4583-95ab-db2c83d34700",
+        "id": "fb003062-c361-467a-a77f-a2ad93136869",
         "assertions": [
           {
             "assertion": "status 200",
@@ -3790,15 +3790,15 @@
       },
       {
         "cursor": {
-          "ref": "7c5f5099-d6ba-429d-9432-473a8275d4a9",
+          "ref": "7d3da187-700c-481d-ad90-d568772cf870",
           "length": 18,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "05c857bd-d7d0-40ac-a4c2-581087d2a13f"
+          "httpRequestId": "407c37d9-c6de-4e44-9df3-609d3c61d76b"
         },
         "item": {
-          "id": "b8b73d9d-1900-483c-a45b-2a7a2bd7967a",
+          "id": "1dd77d61-fff1-4008-8540-3eb07b073d7a",
           "name": "03 Tek etkinlik",
           "request": {
             "url": {
@@ -3819,13 +3819,13 @@
             {
               "listen": "test",
               "script": {
-                "id": "67fa7d13-22d2-4a24-b0a9-6f2da64c2c69",
+                "id": "556b83d7-48cc-4405-89c1-68439f54af53",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
                   "pm.test(\"doğru kayıt\", () => pm.expect(pm.response.json()._id).to.eql(pm.collectionVariables.get(\"eventId\")));"
                 ],
-                "_lastExecutionId": "75bfff07-0e95-488e-a688-7f2d3864d3d1"
+                "_lastExecutionId": "b6a448d0-4129-422b-b240-f650fc16ee57"
               }
             }
           ]
@@ -3836,7 +3836,7 @@
             "port": "3000",
             "path": [
               "events",
-              "6b068166db49dd77e7a780de"
+              "6b068362f13783e3ae3169d0"
             ],
             "host": [
               "localhost"
@@ -3862,7 +3862,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "d77ada46-0c96-4c81-a681-c18c38117fc2",
+              "value": "db1c3e7c-8c84-4569-a22d-9f11e9825b52",
               "system": true
             },
             {
@@ -3884,7 +3884,7 @@
           "method": "GET"
         },
         "response": {
-          "id": "5e174032-bb42-4509-aa07-e91b74b169a2",
+          "id": "589c105d-0c3c-4185-aab7-343d8562fcda",
           "status": "OK",
           "code": 200,
           "header": [
@@ -3906,11 +3906,11 @@
             },
             {
               "key": "ETag",
-              "value": "W/\"199-LvXtlTHs2r71WS9dR4c8T8bdE9U\""
+              "value": "W/\"199-f6LV4zOz5cV6FXk6KaedUQMXDlU\""
             },
             {
               "key": "Date",
-              "value": "Wed, 25 Nov 2026 06:34:18 GMT"
+              "value": "Wed, 25 Nov 2026 06:42:59 GMT"
             },
             {
               "key": "Connection",
@@ -3937,25 +3937,25 @@
               48,
               54,
               56,
+              51,
+              54,
+              50,
+              102,
               49,
-              54,
-              54,
-              100,
-              98,
-              52,
-              57,
-              100,
-              100,
-              55,
-              55,
-              101,
-              55,
-              97,
+              51,
               55,
               56,
-              48,
-              100,
+              51,
               101,
+              51,
+              97,
+              101,
+              51,
+              49,
+              54,
+              57,
+              100,
+              48,
               34,
               44,
               34,
@@ -4282,15 +4282,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
               50,
+              53,
               90,
               34,
               44,
@@ -4321,25 +4321,25 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
               50,
+              53,
               90,
               34,
               125
             ]
           },
           "cookie": [],
-          "responseTime": 4,
+          "responseTime": 294,
           "responseSize": 409
         },
-        "id": "b8b73d9d-1900-483c-a45b-2a7a2bd7967a",
+        "id": "1dd77d61-fff1-4008-8540-3eb07b073d7a",
         "assertions": [
           {
             "assertion": "status 200",
@@ -4353,15 +4353,15 @@
       },
       {
         "cursor": {
-          "ref": "b3d97a6c-2579-47bc-b1e6-eaad0d6c35d6",
+          "ref": "95a54d05-7413-432c-ba6c-4989f794878a",
           "length": 18,
           "cycles": 1,
           "position": 3,
           "iteration": 0,
-          "httpRequestId": "4d8ab20a-31b8-4166-8cd4-b25325d24122"
+          "httpRequestId": "27c8c62a-442e-4902-b2bb-59286d8aed30"
         },
         "item": {
-          "id": "f65e5e22-391a-4e55-a718-147a4a954016",
+          "id": "24857930-4cbb-4562-9e1a-6705b98dee09",
           "name": "04 Olmayan etkinlik (404)",
           "request": {
             "url": {
@@ -4382,13 +4382,13 @@
             {
               "listen": "test",
               "script": {
-                "id": "3ac5abcd-27d4-47ed-a8d2-f17aed3d0f4b",
+                "id": "c738cd8f-b57f-4db7-b0c9-5e0d4176b00d",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"status 404\", () => pm.response.to.have.status(404));",
                   "pm.test(\"hata mesajı var\", () => pm.expect(pm.response.json().error.message).to.be.a(\"string\"));"
                 ],
-                "_lastExecutionId": "4e4f16e2-d68e-4428-bc96-90d4d1fbd439"
+                "_lastExecutionId": "ddd5fa28-9a3a-4c08-ae41-e13a207c2c1d"
               }
             }
           ]
@@ -4425,7 +4425,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "b5846f0b-4c1a-41a2-922b-f8278194e236",
+              "value": "d6770d21-70c7-4a55-87ca-f9b6a43ff3c1",
               "system": true
             },
             {
@@ -4447,7 +4447,7 @@
           "method": "GET"
         },
         "response": {
-          "id": "8a5047bf-2688-4a9c-b8bb-194b239094b1",
+          "id": "d5ef421b-3920-43ec-8bb5-109cee23c1e8",
           "status": "Not Found",
           "code": 404,
           "header": [
@@ -4473,7 +4473,7 @@
             },
             {
               "key": "Date",
-              "value": "Wed, 25 Nov 2026 06:34:18 GMT"
+              "value": "Wed, 25 Nov 2026 06:42:59 GMT"
             },
             {
               "key": "Connection",
@@ -4529,10 +4529,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 1,
+          "responseTime": 3,
           "responseSize": 39
         },
-        "id": "f65e5e22-391a-4e55-a718-147a4a954016",
+        "id": "24857930-4cbb-4562-9e1a-6705b98dee09",
         "assertions": [
           {
             "assertion": "status 404",
@@ -4546,15 +4546,15 @@
       },
       {
         "cursor": {
-          "ref": "79666a54-db8f-46f7-8115-9410ffa49082",
+          "ref": "c1f88d3c-9758-4b4f-a175-fab6a7fb4486",
           "length": 18,
           "cycles": 1,
           "position": 4,
           "iteration": 0,
-          "httpRequestId": "83033317-e702-4c93-834b-096235ef8c71"
+          "httpRequestId": "2b12c130-d17b-4633-ae1e-7e00acd98d92"
         },
         "item": {
-          "id": "ec5d4998-b686-49d5-b005-004512548d92",
+          "id": "a99d64e3-9889-4da0-8431-8b6aaf7b770d",
           "name": "05 Etkinlik oluştur (201)",
           "request": {
             "url": {
@@ -4589,7 +4589,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "c8eb42d6-84c9-48b4-ac33-13e7b8d1ffb2",
+                "id": "49f303b3-26db-4725-94db-b96f6b181cf7",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"status 201\", () => pm.response.to.have.status(201));",
@@ -4598,7 +4598,7 @@
                   "pm.test(\"tarih 20-12-2026\", () => pm.expect(e.date).to.eql(\"20-12-2026\"));",
                   "pm.collectionVariables.set(\"newId\", e._id);"
                 ],
-                "_lastExecutionId": "7b8c18ab-48c0-418b-86c8-16d9a0c037e2"
+                "_lastExecutionId": "3e51c5e3-1d22-4a17-8af0-43e03e965e47"
               }
             }
           ]
@@ -4638,7 +4638,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "9eeb4193-f991-42c4-b7dd-9352af22282d",
+              "value": "0e682aa2-c1c1-46c1-903b-3b576f55b754",
               "system": true
             },
             {
@@ -4674,7 +4674,7 @@
           }
         },
         "response": {
-          "id": "007ecaa7-8977-4bd6-b5ba-ac5b3cedaac9",
+          "id": "f3db9ae5-e8ed-424a-aa7d-32c5870e9648",
           "status": "Created",
           "code": 201,
           "header": [
@@ -4696,11 +4696,11 @@
             },
             {
               "key": "ETag",
-              "value": "W/\"127-Gol6rIva+KarPs+NNRC+oqRzORU\""
+              "value": "W/\"127-pft5iaVjapEyhOjlM+MffKvNOt0\""
             },
             {
               "key": "Date",
-              "value": "Wed, 25 Nov 2026 06:34:18 GMT"
+              "value": "Wed, 25 Nov 2026 06:42:59 GMT"
             },
             {
               "key": "Connection",
@@ -4902,25 +4902,25 @@
               48,
               54,
               56,
+              51,
+              55,
+              51,
+              56,
               49,
-              54,
-              97,
-              100,
               102,
               54,
-              102,
-              57,
-              102,
-              99,
-              49,
-              50,
-              54,
-              100,
-              97,
-              102,
               98,
-              99,
+              52,
+              51,
+              51,
+              55,
+              102,
+              56,
+              53,
+              51,
               50,
+              49,
+              56,
               34,
               44,
               34,
@@ -4950,15 +4950,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
-              56,
+              53,
+              57,
               46,
-              54,
-              48,
-              54,
+              50,
+              50,
+              49,
               90,
               34,
               44,
@@ -4989,15 +4989,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
-              56,
+              53,
+              57,
               46,
-              54,
-              48,
-              54,
+              50,
+              50,
+              49,
               90,
               34,
               44,
@@ -5012,10 +5012,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 10,
+          "responseTime": 181,
           "responseSize": 295
         },
-        "id": "ec5d4998-b686-49d5-b005-004512548d92",
+        "id": "a99d64e3-9889-4da0-8431-8b6aaf7b770d",
         "assertions": [
           {
             "assertion": "status 201",
@@ -5033,15 +5033,15 @@
       },
       {
         "cursor": {
-          "ref": "ef03bd64-957a-4948-9e0c-64684942c4f3",
+          "ref": "30ca7bbc-b5b5-4eaf-bcb9-b949fe248b22",
           "length": 18,
           "cycles": 1,
           "position": 5,
           "iteration": 0,
-          "httpRequestId": "f3606cfd-6623-41f4-9567-5dd92cd56305"
+          "httpRequestId": "e35c86f0-1e5c-4900-bd7c-a047b708c84a"
         },
         "item": {
-          "id": "af686a6b-c6f5-4b4d-b29c-7f2c351c5dea",
+          "id": "7a1f8006-4371-4231-8ce1-27eca018596d",
           "name": "06 Eksik veri (400)",
           "request": {
             "url": {
@@ -5076,13 +5076,13 @@
             {
               "listen": "test",
               "script": {
-                "id": "2f54a3e1-ba19-43e7-bdd7-5268ddd7613f",
+                "id": "efd014c4-18a6-42e8-811f-42b2a71c593f",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"status 400\", () => pm.response.to.have.status(400));",
                   "pm.test(\"hata mesajı var\", () => pm.expect(pm.response.json().error.message).to.be.a(\"string\"));"
                 ],
-                "_lastExecutionId": "1b7bbe9f-3af9-47ac-97a3-1c3403a4f3e7"
+                "_lastExecutionId": "2fc4e9ec-9efa-4750-853c-fe807f4e4ed2"
               }
             }
           ]
@@ -5122,7 +5122,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "986ace4f-75d6-4ec2-bc8b-dadd7d481654",
+              "value": "99241ac2-3423-4ce4-b743-0cb7af62d77e",
               "system": true
             },
             {
@@ -5158,7 +5158,7 @@
           }
         },
         "response": {
-          "id": "c0ba52d6-114b-40c5-b759-acea32cf2e49",
+          "id": "a06161af-62ad-4232-9d55-498815c048f2",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -5184,7 +5184,7 @@
             },
             {
               "key": "Date",
-              "value": "Wed, 25 Nov 2026 06:34:18 GMT"
+              "value": "Wed, 25 Nov 2026 06:42:59 GMT"
             },
             {
               "key": "Connection",
@@ -5320,10 +5320,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 1,
+          "responseTime": 5,
           "responseSize": 119
         },
-        "id": "af686a6b-c6f5-4b4d-b29c-7f2c351c5dea",
+        "id": "7a1f8006-4371-4231-8ce1-27eca018596d",
         "assertions": [
           {
             "assertion": "status 400",
@@ -5337,15 +5337,15 @@
       },
       {
         "cursor": {
-          "ref": "cde35e5b-fa69-45cd-86e4-f96337de3e62",
+          "ref": "ee5044c7-9777-4958-83c7-41dd73fa5bb0",
           "length": 18,
           "cycles": 1,
           "position": 6,
           "iteration": 0,
-          "httpRequestId": "c24abe28-bff4-4f97-a449-584841eb1239"
+          "httpRequestId": "9c00bd9a-5430-44d8-ba94-f4897b1fc40d"
         },
         "item": {
-          "id": "7f3c033c-4de0-4868-b1ef-485f0223761d",
+          "id": "576ad2cc-50a6-497e-a55f-88b040d9d28a",
           "name": "07 Yanlış tarih biçimi (400)",
           "request": {
             "url": {
@@ -5380,13 +5380,13 @@
             {
               "listen": "test",
               "script": {
-                "id": "638cc576-6f0e-4480-8c9f-ab18bfbb2787",
+                "id": "793b9e46-824b-4ea5-86a7-2774bade3b80",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"status 400\", () => pm.response.to.have.status(400));",
                   "pm.test(\"hata mesajı var\", () => pm.expect(pm.response.json().error.message).to.be.a(\"string\"));"
                 ],
-                "_lastExecutionId": "237614a6-6b48-426d-aa23-7f4758de2068"
+                "_lastExecutionId": "48243327-83df-46d1-b01d-ec6d8685fc3a"
               }
             }
           ]
@@ -5426,7 +5426,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "da422c57-e5e7-4d64-88a5-d251d7060b6d",
+              "value": "1222fe82-72e0-4b11-9085-78d79ae0588b",
               "system": true
             },
             {
@@ -5462,7 +5462,7 @@
           }
         },
         "response": {
-          "id": "e53daa46-8387-449e-a808-3ffdd6bd3ff0",
+          "id": "c1bcfda3-6ceb-4cdb-b31c-d20c9c3b7d92",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -5488,7 +5488,7 @@
             },
             {
               "key": "Date",
-              "value": "Wed, 25 Nov 2026 06:34:18 GMT"
+              "value": "Wed, 25 Nov 2026 06:42:59 GMT"
             },
             {
               "key": "Connection",
@@ -5655,10 +5655,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 4,
+          "responseTime": 10,
           "responseSize": 150
         },
-        "id": "7f3c033c-4de0-4868-b1ef-485f0223761d",
+        "id": "576ad2cc-50a6-497e-a55f-88b040d9d28a",
         "assertions": [
           {
             "assertion": "status 400",
@@ -5672,15 +5672,15 @@
       },
       {
         "cursor": {
-          "ref": "d69d431b-a0c9-41a0-822d-610cc52de82e",
+          "ref": "e2788ea6-61fc-4a1b-91ce-19529cec1cb9",
           "length": 18,
           "cycles": 1,
           "position": 7,
           "iteration": 0,
-          "httpRequestId": "3b00c05c-248f-4b59-a675-75898b770d7d"
+          "httpRequestId": "a6bb3cb8-6721-46af-b734-b252a602a733"
         },
         "item": {
-          "id": "f16f5937-4d03-4f2c-95ab-24bf54d1e43a",
+          "id": "09cd0b3c-acfc-4ffb-8735-fc7e02ee72f1",
           "name": "08 Güncelle (200)",
           "request": {
             "url": {
@@ -5716,7 +5716,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "9570a54c-489c-4d77-8f39-8dde5d8b88ed",
+                "id": "1662cf97-28c7-4f36-8c65-92c3b36251af",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
@@ -5724,7 +5724,7 @@
                   "pm.test(\"capacity 55\", () => pm.expect(e.capacity).to.eql(55));",
                   "pm.test(\"diğer alanlar değişmedi\", () => pm.expect(e.title).to.eql(\"Runner Test Etkinliği\"));"
                 ],
-                "_lastExecutionId": "7f2fcd4f-5374-4252-9576-f8a2bb75a1e9"
+                "_lastExecutionId": "b3fc41b6-564b-4962-a57e-f0aaec3bb689"
               }
             }
           ]
@@ -5735,7 +5735,7 @@
             "port": "3000",
             "path": [
               "events",
-              "6b06816adf6f9fc126dafbc2"
+              "6b06837381f6b4337f853218"
             ],
             "host": [
               "localhost"
@@ -5765,7 +5765,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "f38c5d20-5e69-4189-a208-19cbf1bdd094",
+              "value": "73838dcf-c271-4304-b4be-b939372db863",
               "system": true
             },
             {
@@ -5801,7 +5801,7 @@
           }
         },
         "response": {
-          "id": "3336934c-fdc0-4406-b5cb-04d163853e61",
+          "id": "98741a8a-9bd0-4002-a8f6-68041ddd0f79",
           "status": "OK",
           "code": 200,
           "header": [
@@ -5823,11 +5823,11 @@
             },
             {
               "key": "ETag",
-              "value": "W/\"127-4XUJ8fddXeitP98ir/yVqiYJgkQ\""
+              "value": "W/\"127-PKC5ICLM2RWKhlYb5sGGm493zWE\""
             },
             {
               "key": "Date",
-              "value": "Wed, 25 Nov 2026 06:34:18 GMT"
+              "value": "Wed, 25 Nov 2026 06:43:00 GMT"
             },
             {
               "key": "Connection",
@@ -5854,25 +5854,25 @@
               48,
               54,
               56,
+              51,
+              55,
+              51,
+              56,
               49,
-              54,
-              97,
-              100,
               102,
               54,
-              102,
-              57,
-              102,
-              99,
-              49,
-              50,
-              54,
-              100,
-              97,
-              102,
               98,
-              99,
+              52,
+              51,
+              51,
+              55,
+              102,
+              56,
+              53,
+              51,
               50,
+              49,
+              56,
               34,
               44,
               34,
@@ -6077,15 +6077,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
-              56,
+              53,
+              57,
               46,
-              54,
-              48,
-              54,
+              50,
+              50,
+              49,
               90,
               34,
               44,
@@ -6116,15 +6116,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
-              56,
+              53,
+              57,
               46,
-              54,
               52,
-              49,
+              52,
+              55,
               90,
               34,
               44,
@@ -6139,10 +6139,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 4,
+          "responseTime": 772,
           "responseSize": 295
         },
-        "id": "f16f5937-4d03-4f2c-95ab-24bf54d1e43a",
+        "id": "09cd0b3c-acfc-4ffb-8735-fc7e02ee72f1",
         "assertions": [
           {
             "assertion": "status 200",
@@ -6160,15 +6160,15 @@
       },
       {
         "cursor": {
-          "ref": "6b02aca0-b7ca-49a4-b551-ae2f7a0a2e96",
+          "ref": "a78a49f9-c293-405f-9ea0-90c1ca8acf7a",
           "length": 18,
           "cycles": 1,
           "position": 8,
           "iteration": 0,
-          "httpRequestId": "dba0379c-7cab-4ba5-9cb0-4ba646aeefd2"
+          "httpRequestId": "0e2ac174-adac-4a94-a6ee-505aa001baea"
         },
         "item": {
-          "id": "1d663612-8d9f-4ef9-b7ab-77e0d7f590f2",
+          "id": "8a28de05-a7e3-4aaa-9c8f-b661ddd566d3",
           "name": "09 Tarih güncelle (200)",
           "request": {
             "url": {
@@ -6204,13 +6204,13 @@
             {
               "listen": "test",
               "script": {
-                "id": "59b6fa92-8c7a-431f-aa79-ea335a868b09",
+                "id": "3a2c5650-bf54-41f0-87b2-fb13f2594960",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
                   "pm.test(\"tarih 25-12-2026\", () => pm.expect(pm.response.json().date).to.eql(\"25-12-2026\"));"
                 ],
-                "_lastExecutionId": "617be3e9-6184-4e5b-a48a-d2bcd3becb81"
+                "_lastExecutionId": "d6778285-9aef-4239-87c2-3c26ec8628c1"
               }
             }
           ]
@@ -6221,7 +6221,7 @@
             "port": "3000",
             "path": [
               "events",
-              "6b06816adf6f9fc126dafbc2"
+              "6b06837381f6b4337f853218"
             ],
             "host": [
               "localhost"
@@ -6251,7 +6251,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "89a2c808-28ac-4e1a-8d3b-44cb69acf092",
+              "value": "b0185903-96f5-49c5-b7be-a812d7a8b48c",
               "system": true
             },
             {
@@ -6287,7 +6287,7 @@
           }
         },
         "response": {
-          "id": "56ae4f8b-fa48-40c9-89e7-f773adf27086",
+          "id": "a3a4d1c4-42e9-4d55-8266-bf9cf9be1c1a",
           "status": "OK",
           "code": 200,
           "header": [
@@ -6309,11 +6309,11 @@
             },
             {
               "key": "ETag",
-              "value": "W/\"127-Qm08oydKSPfH5twksC3Db07wJYA\""
+              "value": "W/\"127-DezFURUzG96LRiVcqyRnS+dE86Q\""
             },
             {
               "key": "Date",
-              "value": "Wed, 25 Nov 2026 06:34:18 GMT"
+              "value": "Wed, 25 Nov 2026 06:43:01 GMT"
             },
             {
               "key": "Connection",
@@ -6340,25 +6340,25 @@
               48,
               54,
               56,
+              51,
+              55,
+              51,
+              56,
               49,
-              54,
-              97,
-              100,
               102,
               54,
-              102,
-              57,
-              102,
-              99,
-              49,
-              50,
-              54,
-              100,
-              97,
-              102,
               98,
-              99,
+              52,
+              51,
+              51,
+              55,
+              102,
+              56,
+              53,
+              51,
               50,
+              49,
+              56,
               34,
               44,
               34,
@@ -6563,15 +6563,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
-              56,
+              53,
+              57,
               46,
-              54,
-              48,
-              54,
+              50,
+              50,
+              49,
               90,
               34,
               44,
@@ -6602,15 +6602,15 @@
               48,
               54,
               58,
-              51,
               52,
+              51,
               58,
-              49,
-              56,
+              48,
+              48,
               46,
-              54,
-              53,
-              53,
+              50,
+              51,
+              56,
               90,
               34,
               44,
@@ -6625,10 +6625,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 2,
+          "responseTime": 797,
           "responseSize": 295
         },
-        "id": "1d663612-8d9f-4ef9-b7ab-77e0d7f590f2",
+        "id": "8a28de05-a7e3-4aaa-9c8f-b661ddd566d3",
         "assertions": [
           {
             "assertion": "status 200",
@@ -6642,15 +6642,15 @@
       },
       {
         "cursor": {
-          "ref": "c6a70438-b7f8-4edd-9976-42bbec04d6f1",
+          "ref": "03e1c093-c77a-4a16-9bc3-ac6514a2fcd5",
           "length": 18,
           "cycles": 1,
           "position": 9,
           "iteration": 0,
-          "httpRequestId": "e3b004ee-c776-495c-91cd-cebb230e346c"
+          "httpRequestId": "c0955798-bdd5-4a1f-a402-22d097d4d58d"
         },
         "item": {
-          "id": "923c10b3-f6fa-4d0c-8183-525c8d1af36c",
+          "id": "b3b7046a-ea76-4aa3-a324-00251e3c0d36",
           "name": "10 Boş body (400)",
           "request": {
             "url": {
@@ -6686,13 +6686,13 @@
             {
               "listen": "test",
               "script": {
-                "id": "9d347f7f-cab9-43bc-b2c0-9fd27e60e13b",
+                "id": "85a35e68-c361-4032-adca-bdc181a5e75c",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"status 400\", () => pm.response.to.have.status(400));",
                   "pm.test(\"hata mesajı var\", () => pm.expect(pm.response.json().error.message).to.be.a(\"string\"));"
                 ],
-                "_lastExecutionId": "1f562fba-fdbf-4d91-b645-bb18637bd2ec"
+                "_lastExecutionId": "85574e98-ec08-4153-b096-58bb5e103f28"
               }
             }
           ]
@@ -6703,7 +6703,7 @@
             "port": "3000",
             "path": [
               "events",
-              "6b06816adf6f9fc126dafbc2"
+              "6b06837381f6b4337f853218"
             ],
             "host": [
               "localhost"
@@ -6733,7 +6733,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "945f1807-fe3c-4151-9265-7e1affc340f9",
+              "value": "b1e364c0-2d5d-4916-b351-a8c1080c7b59",
               "system": true
             },
             {
@@ -6769,7 +6769,7 @@
           }
         },
         "response": {
-          "id": "19d43762-a2f3-4f8b-870e-090e0003aa25",
+          "id": "42f68f46-b50b-4f71-8b6c-a82c14683db2",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -6795,7 +6795,7 @@
             },
             {
               "key": "Date",
-              "value": "Wed, 25 Nov 2026 06:34:18 GMT"
+              "value": "Wed, 25 Nov 2026 06:43:01 GMT"
             },
             {
               "key": "Connection",
@@ -6849,10 +6849,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 1,
+          "responseTime": 4,
           "responseSize": 37
         },
-        "id": "923c10b3-f6fa-4d0c-8183-525c8d1af36c",
+        "id": "b3b7046a-ea76-4aa3-a324-00251e3c0d36",
         "assertions": [
           {
             "assertion": "status 400",
@@ -6866,15 +6866,15 @@
       },
       {
         "cursor": {
-          "ref": "d18a066b-92e2-4fb6-a8a3-fa53e99fde13",
+          "ref": "9c3ade8e-753b-4526-adcf-9a3b7f996081",
           "length": 18,
           "cycles": 1,
           "position": 10,
           "iteration": 0,
-          "httpRequestId": "84a43687-ecc7-46bc-a628-b4757112bf20"
+          "httpRequestId": "b1d6929c-4a01-41b0-bcd2-461ce25dc5d2"
         },
         "item": {
-          "id": "8be2e1b5-fbc4-411d-9fee-43a1d3ef2ffb",
+          "id": "d5a66679-b8a7-4f3a-96a2-6cf5f8648b11",
           "name": "11 Geçersiz kategori (400)",
           "request": {
             "url": {
@@ -6910,13 +6910,13 @@
             {
               "listen": "test",
               "script": {
-                "id": "9fd928f9-d4ea-4b37-811e-54042b32ba32",
+                "id": "c74fb01e-26fb-40b6-953e-85381b279ff5",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"status 400\", () => pm.response.to.have.status(400));",
                   "pm.test(\"hata mesajı var\", () => pm.expect(pm.response.json().error.message).to.be.a(\"string\"));"
                 ],
-                "_lastExecutionId": "46612ab3-9757-478a-a1a9-8a82dc8985fd"
+                "_lastExecutionId": "0b2d08c4-a453-483e-868c-4d74a252f86a"
               }
             }
           ]
@@ -6927,7 +6927,7 @@
             "port": "3000",
             "path": [
               "events",
-              "6b06816adf6f9fc126dafbc2"
+              "6b06837381f6b4337f853218"
             ],
             "host": [
               "localhost"
@@ -6957,7 +6957,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "a2ae5f65-4e3f-4311-9096-f5349372c683",
+              "value": "82dce50a-44c8-4e6b-a2c2-01aa78ffde46",
               "system": true
             },
             {
@@ -6993,7 +6993,7 @@
           }
         },
         "response": {
-          "id": "8bf2b4ce-d13d-4b9d-8afc-cbf4d861a413",
+          "id": "c9e43d70-ad31-4ee9-9d83-07ffae261fe9",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -7019,7 +7019,7 @@
             },
             {
               "key": "Date",
-              "value": "Wed, 25 Nov 2026 06:34:18 GMT"
+              "value": "Wed, 25 Nov 2026 06:43:01 GMT"
             },
             {
               "key": "Connection",
@@ -7143,10 +7143,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 1,
+          "responseTime": 5,
           "responseSize": 107
         },
-        "id": "8be2e1b5-fbc4-411d-9fee-43a1d3ef2ffb",
+        "id": "d5a66679-b8a7-4f3a-96a2-6cf5f8648b11",
         "assertions": [
           {
             "assertion": "status 400",
@@ -7160,15 +7160,15 @@
       },
       {
         "cursor": {
-          "ref": "171c7fa1-ab1b-4e36-965a-36bcf1575d77",
+          "ref": "28e82e29-f66d-42ff-9db2-2ea2c1007340",
           "length": 18,
           "cycles": 1,
           "position": 11,
           "iteration": 0,
-          "httpRequestId": "d7c2e9af-b091-4a98-8925-26d593407bad"
+          "httpRequestId": "84eb1698-b176-4b17-9ef2-39c0a18fa397"
         },
         "item": {
-          "id": "be666225-ee44-4b4a-9199-404d14c18bc6",
+          "id": "bd608ec0-ecf2-4876-8086-f659e5d434ff",
           "name": "12 _id değiştirme (400)",
           "request": {
             "url": {
@@ -7204,13 +7204,13 @@
             {
               "listen": "test",
               "script": {
-                "id": "3832a55b-25f5-4390-b2ec-a9aa66921316",
+                "id": "df56cb81-eb2b-405a-8c46-773ec514e9b6",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"status 400\", () => pm.response.to.have.status(400));",
                   "pm.test(\"hata mesajı var\", () => pm.expect(pm.response.json().error.message).to.be.a(\"string\"));"
                 ],
-                "_lastExecutionId": "1553832c-63d3-442f-8735-bc8ada215500"
+                "_lastExecutionId": "40bf648f-1e94-425f-80f0-396f5ea2e9d1"
               }
             }
           ]
@@ -7221,7 +7221,7 @@
             "port": "3000",
             "path": [
               "events",
-              "6b06816adf6f9fc126dafbc2"
+              "6b06837381f6b4337f853218"
             ],
             "host": [
               "localhost"
@@ -7251,7 +7251,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "ff16a73a-5c16-4476-b0ca-a2bfc16b3094",
+              "value": "fc8e93db-8f01-4549-8ab0-8d79cded25ce",
               "system": true
             },
             {
@@ -7287,7 +7287,7 @@
           }
         },
         "response": {
-          "id": "b12d808d-eecc-480f-a249-59cdde800e6b",
+          "id": "1b1d74cf-e536-46a2-9b3f-a3b082a70e8d",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -7313,7 +7313,7 @@
             },
             {
               "key": "Date",
-              "value": "Wed, 25 Nov 2026 06:34:18 GMT"
+              "value": "Wed, 25 Nov 2026 06:43:01 GMT"
             },
             {
               "key": "Connection",
@@ -7375,10 +7375,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 1,
+          "responseTime": 3,
           "responseSize": 45
         },
-        "id": "be666225-ee44-4b4a-9199-404d14c18bc6",
+        "id": "bd608ec0-ecf2-4876-8086-f659e5d434ff",
         "assertions": [
           {
             "assertion": "status 400",
@@ -7392,15 +7392,15 @@
       },
       {
         "cursor": {
-          "ref": "98bd88c1-3021-4d5c-a705-b8762668e69c",
+          "ref": "6fc5352a-feb5-4e45-a105-e8bdcd31562d",
           "length": 18,
           "cycles": 1,
           "position": 12,
           "iteration": 0,
-          "httpRequestId": "35b9f8af-874a-4858-9da7-a56f3736f364"
+          "httpRequestId": "26384460-e515-4943-8c2e-fdc97bc6804e"
         },
         "item": {
-          "id": "f79beffe-7186-4034-a6d2-f1599193b336",
+          "id": "57316b22-cb85-47ac-a291-77f8abac60ee",
           "name": "13 Olmayan id güncelle (404)",
           "request": {
             "url": {
@@ -7436,13 +7436,13 @@
             {
               "listen": "test",
               "script": {
-                "id": "b4fece0e-d919-42f8-9646-2a4f15ab93e1",
+                "id": "54143d3c-892f-4131-b5be-d403cd14ad9a",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"status 404\", () => pm.response.to.have.status(404));",
                   "pm.test(\"hata mesajı var\", () => pm.expect(pm.response.json().error.message).to.be.a(\"string\"));"
                 ],
-                "_lastExecutionId": "8588f0a4-c5d3-47ad-bc9a-a996525e7327"
+                "_lastExecutionId": "adfc4507-0a3d-47b8-be08-6c0e26fdbd3d"
               }
             }
           ]
@@ -7483,7 +7483,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "5c2fcbfc-e261-4530-b244-6edee81d792c",
+              "value": "2516677e-4e77-4d69-8e70-a91850fc2825",
               "system": true
             },
             {
@@ -7519,7 +7519,7 @@
           }
         },
         "response": {
-          "id": "49084149-4260-4734-9d20-ff2fafc98ce5",
+          "id": "b56c2201-e801-4d8a-83b6-5fe688fb11e5",
           "status": "Not Found",
           "code": 404,
           "header": [
@@ -7545,7 +7545,7 @@
             },
             {
               "key": "Date",
-              "value": "Wed, 25 Nov 2026 06:34:18 GMT"
+              "value": "Wed, 25 Nov 2026 06:43:01 GMT"
             },
             {
               "key": "Connection",
@@ -7601,10 +7601,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 1,
+          "responseTime": 2,
           "responseSize": 39
         },
-        "id": "f79beffe-7186-4034-a6d2-f1599193b336",
+        "id": "57316b22-cb85-47ac-a291-77f8abac60ee",
         "assertions": [
           {
             "assertion": "status 404",
@@ -7618,15 +7618,15 @@
       },
       {
         "cursor": {
-          "ref": "7745e6ae-e852-41ec-af10-344da35c9df1",
+          "ref": "c28333b5-ddaf-4367-9ddb-2f8ed29bff21",
           "length": 18,
           "cycles": 1,
           "position": 13,
           "iteration": 0,
-          "httpRequestId": "cde849f2-620d-4381-94b7-9f9b3007b9da"
+          "httpRequestId": "44022b0a-483c-4ea0-ad59-6c326d444b60"
         },
         "item": {
-          "id": "99b44d2a-8624-4d82-a868-a524c0309893",
+          "id": "ed19f4e1-b449-4883-8bec-08481f94ce4f",
           "name": "14 Arama",
           "request": {
             "url": {
@@ -7651,7 +7651,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "fa792663-0597-4c3c-ab4f-5c917084b6f5",
+                "id": "caf69970-0d46-41a8-a36c-c4329cca2730",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
@@ -7659,7 +7659,7 @@
                   "pm.test(\"en az 1 sonuç\", () => pm.expect(list.length).to.be.at.least(1));",
                   "pm.test(\"hepsinin başlığında atölye\", () => list.forEach((e) => pm.expect(e.title.toLocaleLowerCase(\"tr\")).to.include(\"atölye\")));"
                 ],
-                "_lastExecutionId": "99ea52f9-bbb4-4b56-ab70-e534135dbf0a"
+                "_lastExecutionId": "90ee6176-4853-41c7-85d4-93d3cd978de9"
               }
             }
           ]
@@ -7700,7 +7700,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "9f396384-6cb1-48e0-8768-2ed21357c8b2",
+              "value": "48ff0e15-1fb0-4cd5-9b18-657c38860ca8",
               "system": true
             },
             {
@@ -7722,7 +7722,7 @@
           "method": "GET"
         },
         "response": {
-          "id": "5307baf5-d49a-41ce-91f9-57986ab5093d",
+          "id": "33e6609a-b664-453d-a1b9-5c12b58da223",
           "status": "OK",
           "code": 200,
           "header": [
@@ -7744,11 +7744,11 @@
             },
             {
               "key": "ETag",
-              "value": "W/\"1ab-WIUyNWG0Bx2WL4nVa/4AtJnESuM\""
+              "value": "W/\"1ab-5kUgEBexIiUZTDJ+WP5HsNDrmdo\""
             },
             {
               "key": "Date",
-              "value": "Wed, 25 Nov 2026 06:34:18 GMT"
+              "value": "Wed, 25 Nov 2026 06:43:01 GMT"
             },
             {
               "key": "Connection",
@@ -7776,25 +7776,25 @@
               48,
               54,
               56,
+              51,
+              54,
+              50,
+              102,
               49,
-              54,
-              54,
-              100,
-              98,
-              52,
-              57,
-              100,
-              100,
-              55,
-              55,
-              101,
-              55,
-              97,
+              51,
               55,
               56,
-              48,
+              51,
+              101,
+              51,
+              97,
+              101,
+              51,
+              49,
+              54,
+              57,
               100,
-              102,
+              49,
               34,
               44,
               34,
@@ -8137,15 +8137,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               44,
@@ -8176,15 +8176,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               125,
@@ -8192,10 +8192,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 3,
+          "responseTime": 263,
           "responseSize": 427
         },
-        "id": "99b44d2a-8624-4d82-a868-a524c0309893",
+        "id": "ed19f4e1-b449-4883-8bec-08481f94ce4f",
         "assertions": [
           {
             "assertion": "status 200",
@@ -8213,15 +8213,15 @@
       },
       {
         "cursor": {
-          "ref": "45b419f6-ff38-45e9-b311-bf38598e9eba",
+          "ref": "793dd122-7083-4525-9b6b-dd30a78e06f9",
           "length": 18,
           "cycles": 1,
           "position": 14,
           "iteration": 0,
-          "httpRequestId": "94ab21a8-e5f1-4ee8-a3bc-b1db9076da21"
+          "httpRequestId": "35d0f138-80ce-4e84-9a39-5a21e7c2804a"
         },
         "item": {
-          "id": "4c82c1ce-7468-4c6b-8dd8-f95401b28be8",
+          "id": "8c71c9b3-cf03-482c-aa6b-331eb4165aa0",
           "name": "15 Arama + kategori",
           "request": {
             "url": {
@@ -8250,7 +8250,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "be67d4a4-b5f9-4b59-967b-2d2962a8181f",
+                "id": "3995f9ae-af65-4388-8707-50718ecebf43",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
@@ -8258,7 +8258,7 @@
                   "pm.test(\"hepsi Atölye kategorisinde\", () => list.forEach((e) => pm.expect(e.category).to.eql(\"Atölye\")));",
                   "pm.test(\"hepsinin başlığında atölye\", () => list.forEach((e) => pm.expect(e.title.toLocaleLowerCase(\"tr\")).to.include(\"atölye\")));"
                 ],
-                "_lastExecutionId": "f1034cfe-4cd5-445d-bd28-b3fae18ca422"
+                "_lastExecutionId": "61092bb7-ac4a-458a-8743-32e9c4e43b56"
               }
             }
           ]
@@ -8303,7 +8303,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "992d5315-c24a-4222-a67c-3ade8019d4ee",
+              "value": "806bfd53-7183-43f4-8974-030b8d743014",
               "system": true
             },
             {
@@ -8325,7 +8325,7 @@
           "method": "GET"
         },
         "response": {
-          "id": "8f8826c1-15f7-4b49-813b-925a41104b3b",
+          "id": "1a1289cc-be3d-47c4-8f44-f28097acb185",
           "status": "OK",
           "code": 200,
           "header": [
@@ -8347,11 +8347,11 @@
             },
             {
               "key": "ETag",
-              "value": "W/\"1ab-WIUyNWG0Bx2WL4nVa/4AtJnESuM\""
+              "value": "W/\"1ab-5kUgEBexIiUZTDJ+WP5HsNDrmdo\""
             },
             {
               "key": "Date",
-              "value": "Wed, 25 Nov 2026 06:34:18 GMT"
+              "value": "Wed, 25 Nov 2026 06:43:01 GMT"
             },
             {
               "key": "Connection",
@@ -8379,25 +8379,25 @@
               48,
               54,
               56,
+              51,
+              54,
+              50,
+              102,
               49,
-              54,
-              54,
-              100,
-              98,
-              52,
-              57,
-              100,
-              100,
-              55,
-              55,
-              101,
-              55,
-              97,
+              51,
               55,
               56,
-              48,
+              51,
+              101,
+              51,
+              97,
+              101,
+              51,
+              49,
+              54,
+              57,
               100,
-              102,
+              49,
               34,
               44,
               34,
@@ -8740,15 +8740,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               44,
@@ -8779,15 +8779,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               125,
@@ -8795,10 +8795,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 2,
+          "responseTime": 246,
           "responseSize": 427
         },
-        "id": "4c82c1ce-7468-4c6b-8dd8-f95401b28be8",
+        "id": "8c71c9b3-cf03-482c-aa6b-331eb4165aa0",
         "assertions": [
           {
             "assertion": "status 200",
@@ -8816,15 +8816,15 @@
       },
       {
         "cursor": {
-          "ref": "74a1758b-7152-47c1-ad08-25d406c06a66",
+          "ref": "3463711b-da49-4f7c-a95a-379e6587f4e4",
           "length": 18,
           "cycles": 1,
           "position": 15,
           "iteration": 0,
-          "httpRequestId": "ee3bad71-3940-4f69-b9c9-87f7ce5975ca"
+          "httpRequestId": "c2e7ff4a-41fc-4cc2-a31c-22b72ac616e4"
         },
         "item": {
-          "id": "98ec3edc-e883-4b51-a9ec-ff5c4e3fbf9d",
+          "id": "be07cb8f-ca1c-405a-8302-6924c0516fba",
           "name": "16 Yaklaşan etkinlikler",
           "request": {
             "url": {
@@ -8845,7 +8845,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "1cfe8552-56bf-4049-9660-06042780a9a8",
+                "id": "3d44e8cb-78ed-4b7c-af03-cec024f3b1b4",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
@@ -8856,7 +8856,7 @@
                   "pm.test(\"en yakın önce\", () => list.forEach((e, i) => i && pm.expect(d(e.date)).to.be.at.least(d(list[i - 1].date))));",
                   "pm.test(\"seed'deki geçmiş etkinlikler elendi\", () => pm.expect(list.length).to.be.below(Number(pm.collectionVariables.get(\"toplam\")) + 1));"
                 ],
-                "_lastExecutionId": "95afd933-5cef-4d9b-8ae2-777be1e377e9"
+                "_lastExecutionId": "18d025ff-c2c6-4885-a2cc-ed74dec9b993"
               }
             }
           ]
@@ -8893,7 +8893,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "21342edf-0e2f-43e2-ac44-15cac784e4de",
+              "value": "0468c3bb-9c81-4550-8673-d75318b816a2",
               "system": true
             },
             {
@@ -8915,7 +8915,7 @@
           "method": "GET"
         },
         "response": {
-          "id": "35156e92-4369-4a7c-baf0-c686e4c49d52",
+          "id": "e0e46d75-dac1-41f1-92ca-46ca2f502cf6",
           "status": "OK",
           "code": 200,
           "header": [
@@ -8937,11 +8937,11 @@
             },
             {
               "key": "ETag",
-              "value": "W/\"7be-RpeEOPrreiyuooKjbh6/3bpH3to\""
+              "value": "W/\"7be-GkzdioZjfIovA82af5DuHgR0Zjg\""
             },
             {
               "key": "Date",
-              "value": "Wed, 25 Nov 2026 06:34:18 GMT"
+              "value": "Wed, 25 Nov 2026 06:43:02 GMT"
             },
             {
               "key": "Connection",
@@ -8969,25 +8969,25 @@
               48,
               54,
               56,
+              51,
+              54,
+              50,
+              102,
               49,
-              54,
-              54,
-              100,
-              98,
-              52,
-              57,
-              100,
-              100,
-              55,
-              55,
-              101,
-              55,
-              97,
+              51,
               55,
               56,
-              48,
+              51,
               101,
+              51,
+              97,
+              101,
+              51,
               49,
+              54,
+              57,
+              100,
+              51,
               34,
               44,
               34,
@@ -9313,15 +9313,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               44,
@@ -9352,15 +9352,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               125,
@@ -9378,25 +9378,25 @@
               48,
               54,
               56,
+              51,
+              54,
+              50,
+              102,
               49,
-              54,
-              54,
-              100,
-              98,
-              52,
-              57,
-              100,
-              100,
-              55,
-              55,
-              101,
-              55,
-              97,
+              51,
               55,
               56,
-              48,
+              51,
               101,
-              48,
+              51,
+              97,
+              101,
+              51,
+              49,
+              54,
+              57,
+              100,
+              50,
               34,
               44,
               34,
@@ -9732,15 +9732,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               44,
@@ -9771,15 +9771,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               125,
@@ -9797,25 +9797,25 @@
               48,
               54,
               56,
+              51,
+              54,
+              50,
+              102,
               49,
-              54,
-              54,
-              100,
-              98,
-              52,
-              57,
-              100,
-              100,
-              55,
-              55,
-              101,
-              55,
-              97,
+              51,
               55,
               56,
-              48,
+              51,
               101,
-              50,
+              51,
+              97,
+              101,
+              51,
+              49,
+              54,
+              57,
+              100,
+              52,
               34,
               44,
               34,
@@ -10155,15 +10155,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               44,
@@ -10194,15 +10194,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               125,
@@ -10220,25 +10220,25 @@
               48,
               54,
               56,
+              51,
+              54,
+              50,
+              102,
               49,
-              54,
-              54,
-              100,
-              98,
-              52,
-              57,
-              100,
-              100,
-              55,
-              55,
-              101,
-              55,
-              97,
+              51,
               55,
               56,
-              48,
+              51,
               101,
               51,
+              97,
+              101,
+              51,
+              49,
+              54,
+              57,
+              100,
+              53,
               34,
               44,
               34,
@@ -10589,15 +10589,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               44,
@@ -10628,15 +10628,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
               52,
+              50,
               46,
               55,
-              51,
-              51,
+              50,
+              54,
               90,
               34,
               125,
@@ -10654,25 +10654,25 @@
               48,
               54,
               56,
+              51,
+              55,
+              51,
+              56,
               49,
-              54,
-              97,
-              100,
               102,
               54,
-              102,
-              57,
-              102,
-              99,
-              49,
-              50,
-              54,
-              100,
-              97,
-              102,
               98,
-              99,
+              52,
+              51,
+              51,
+              55,
+              102,
+              56,
+              53,
+              51,
               50,
+              49,
+              56,
               34,
               44,
               34,
@@ -10877,15 +10877,15 @@
               48,
               54,
               58,
-              51,
               52,
+              50,
               58,
-              49,
-              56,
+              53,
+              57,
               46,
-              54,
-              48,
-              54,
+              50,
+              50,
+              49,
               90,
               34,
               44,
@@ -10916,15 +10916,15 @@
               48,
               54,
               58,
-              51,
               52,
+              51,
               58,
-              49,
-              56,
+              48,
+              48,
               46,
-              54,
-              53,
-              53,
+              50,
+              51,
+              56,
               90,
               34,
               44,
@@ -10940,10 +10940,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 2,
+          "responseTime": 539,
           "responseSize": 1982
         },
-        "id": "98ec3edc-e883-4b51-a9ec-ff5c4e3fbf9d",
+        "id": "be07cb8f-ca1c-405a-8302-6924c0516fba",
         "assertions": [
           {
             "assertion": "status 200",
@@ -10965,15 +10965,15 @@
       },
       {
         "cursor": {
-          "ref": "1552438f-b8fe-428f-8ec6-984dd14f9940",
+          "ref": "9a2f4b90-44ff-4970-b611-99afb4664a28",
           "length": 18,
           "cycles": 1,
           "position": 16,
           "iteration": 0,
-          "httpRequestId": "6c494c48-e07c-4579-819f-d96dc21ed366"
+          "httpRequestId": "b55a18db-0943-4bfd-b9f4-d8546f5b4361"
         },
         "item": {
-          "id": "9be57430-e915-40cc-86a3-aa407d3ebe28",
+          "id": "5896516e-bbd0-4092-b99c-0e9dddc6c778",
           "name": "17 Sil (204)",
           "request": {
             "url": {
@@ -10994,13 +10994,13 @@
             {
               "listen": "test",
               "script": {
-                "id": "91160436-9f74-47d2-8556-70e8528d5236",
+                "id": "98c59e19-e08f-4ffa-8f41-32909d4432bf",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"status 204\", () => pm.response.to.have.status(204));",
                   "pm.test(\"gövde boş\", () => pm.expect(pm.response.text()).to.eql(\"\"));"
                 ],
-                "_lastExecutionId": "1f819c38-f1f4-4f0f-b355-f6a63c8c62b1"
+                "_lastExecutionId": "ca12d43c-4a3d-4907-88cf-b5689f92c49a"
               }
             }
           ]
@@ -11011,7 +11011,7 @@
             "port": "3000",
             "path": [
               "events",
-              "6b06816adf6f9fc126dafbc2"
+              "6b06837381f6b4337f853218"
             ],
             "host": [
               "localhost"
@@ -11037,7 +11037,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "5c9e7a52-b333-4f3c-8ab1-3808e639fd66",
+              "value": "8e509a6b-96c1-43d5-b672-c177977db943",
               "system": true
             },
             {
@@ -11059,7 +11059,7 @@
           "method": "DELETE"
         },
         "response": {
-          "id": "46cf6a16-becf-40cb-9c92-94026a8c8312",
+          "id": "33b55227-c871-4051-976d-9b2d62571083",
           "status": "No Content",
           "code": 204,
           "header": [
@@ -11073,7 +11073,7 @@
             },
             {
               "key": "Date",
-              "value": "Wed, 25 Nov 2026 06:34:18 GMT"
+              "value": "Wed, 25 Nov 2026 06:43:02 GMT"
             },
             {
               "key": "Connection",
@@ -11089,10 +11089,10 @@
             "data": []
           },
           "cookie": [],
-          "responseTime": 2,
+          "responseTime": 216,
           "responseSize": 0
         },
-        "id": "9be57430-e915-40cc-86a3-aa407d3ebe28",
+        "id": "5896516e-bbd0-4092-b99c-0e9dddc6c778",
         "assertions": [
           {
             "assertion": "status 204",
@@ -11106,15 +11106,15 @@
       },
       {
         "cursor": {
-          "ref": "22bc8bf7-3b18-435b-a189-974563c1b65b",
+          "ref": "74f354db-7dae-442a-a66c-76a93577c742",
           "length": 18,
           "cycles": 1,
           "position": 17,
           "iteration": 0,
-          "httpRequestId": "be4f7339-2224-4457-b09f-58f9fc872e10"
+          "httpRequestId": "dadd7626-b198-4dbd-9bf7-e2b54b2af223"
         },
         "item": {
-          "id": "10afa3ab-75f8-43c7-ba53-d1651b267483",
+          "id": "a4ca1592-75cd-44b9-bbc4-0bdc8bbf2fe8",
           "name": "18 Tekrar sil (404)",
           "request": {
             "url": {
@@ -11135,13 +11135,13 @@
             {
               "listen": "test",
               "script": {
-                "id": "474a4667-1a8e-4343-997e-a10cda9337bc",
+                "id": "5406c145-b03e-493b-b5ef-3a4fddd489b7",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"status 404\", () => pm.response.to.have.status(404));",
                   "pm.test(\"hata mesajı var\", () => pm.expect(pm.response.json().error.message).to.be.a(\"string\"));"
                 ],
-                "_lastExecutionId": "641d4d15-2bd9-47fd-a0ed-fc6832fc5bed"
+                "_lastExecutionId": "362d3adf-251b-4e79-91c5-2388fdc84a3e"
               }
             }
           ]
@@ -11152,7 +11152,7 @@
             "port": "3000",
             "path": [
               "events",
-              "6b06816adf6f9fc126dafbc2"
+              "6b06837381f6b4337f853218"
             ],
             "host": [
               "localhost"
@@ -11178,7 +11178,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "22940241-2144-4ad6-91a2-1e6fea325369",
+              "value": "f37055e3-1ee7-465f-a636-a242d17fa4cd",
               "system": true
             },
             {
@@ -11200,7 +11200,7 @@
           "method": "DELETE"
         },
         "response": {
-          "id": "625eeb54-5803-49e2-9b90-b2fb5fa45620",
+          "id": "d356f9bd-d101-473d-bdf1-93ca0b1ec779",
           "status": "Not Found",
           "code": 404,
           "header": [
@@ -11226,7 +11226,7 @@
             },
             {
               "key": "Date",
-              "value": "Wed, 25 Nov 2026 06:34:18 GMT"
+              "value": "Wed, 25 Nov 2026 06:43:02 GMT"
             },
             {
               "key": "Connection",
@@ -11282,10 +11282,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 1,
+          "responseTime": 153,
           "responseSize": 39
         },
-        "id": "10afa3ab-75f8-43c7-ba53-d1651b267483",
+        "id": "a4ca1592-75cd-44b9-bbc4-0bdc8bbf2fe8",
         "assertions": [
           {
             "assertion": "status 404",
