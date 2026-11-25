@@ -215,6 +215,8 @@ test("Sprint 9: tam CRUD, arama ve yaklaşan etkinlikler", async (t) => {
       title: "Güncelleme Denemesi", category: "Seminer", date: "10-12-2026", capacity: 10, location: "A101",
     }));
     const id = original._id;
+    // updatedAt milisaniye duyarlıdır; aynı milisaniyeye denk gelmesin.
+    await new Promise((resolve) => setTimeout(resolve, 5));
     const ok = await patch(id, { title: "  Yeni Başlık  " });
     assert.equal(ok.status, 200);
     assert.equal(ok.data.title, "Yeni Başlık");
